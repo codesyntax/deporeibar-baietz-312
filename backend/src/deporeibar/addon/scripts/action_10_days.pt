@@ -4,7 +4,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       i18n:domain="deporeibar.addon"
 >
-  <body>
+  <body i18n:translate="">
     <p>Kaixo,</p>
 
     <p>
