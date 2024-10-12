@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
+from deporeibar.addon import _
 from email.headerregistry import Address
 from email.message import EmailMessage
-
 from plone import api
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces.controlpanel import IMailSchema
-from deporeibar.addon import _
 from zope.component import getUtility
 
 

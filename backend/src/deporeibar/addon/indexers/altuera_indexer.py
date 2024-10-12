@@ -1,20 +1,18 @@
-# -*- coding: utf-8 -*-
-
+from deporeibar.addon.content.mendia import IMendia
 from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer import indexer
-from deporeibar.addon.content.mendia import IMendia
 
 
 @indexer(IDexterityContent)
 def dummy(obj):
-    """ Dummy to prevent indexing other objects thru acquisition """
-    raise AttributeError('This field should not indexed here!')
+    """Dummy to prevent indexing other objects thru acquisition"""
+    raise AttributeError("This field should not indexed here!")
 
 
 @indexer(IMendia)  # ADJUST THIS!
 def altuera_indexer(obj):
     """Calculate and return the value for the indexer"""
-    return "{:>04}".format(obj.altuera)
+    return f"{obj.altuera:>04}"
 
 
 @indexer(IMendia)  # ADJUST THIS!

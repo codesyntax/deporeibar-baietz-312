@@ -59,7 +59,7 @@ setup(
         "z3c.jbot",
         "collective.taxonomy",
         "requests",
-        "collective.contentrules.telegram"
+        "collective.contentrules.telegram",
     ],
     extras_require={
         "test": [

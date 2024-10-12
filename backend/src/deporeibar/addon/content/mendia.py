@@ -1,30 +1,31 @@
-# -*- coding: utf-8 -*-
 # from plone.app.textfield import RichText
 # from plone.autoform import directives
+from deporeibar.addon import _
+from plone.app.dexterity.textindexer import searchable
 from plone.dexterity.content import Container
+from plone.schema.jsonfield import JSONField
+
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
+
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from plone.app.dexterity.textindexer import searchable
-from plone.schema.jsonfield import JSONField
 
-from deporeibar.addon import _
 
 class IMendia(model.Schema):
-    """ Marker interface and Dexterity Python Schema for Mendia
-    """
+    """Marker interface and Dexterity Python Schema for Mendia"""
+
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
     searchable("altuera")
     altuera = schema.Int(
         title=_(
-            u'Altuera',
+            "Altuera",
         ),
         description=_(
-            u'',
+            "",
         ),
         required=False,
         default=0,
@@ -33,70 +34,70 @@ class IMendia(model.Schema):
 
     lat = schema.TextLine(
         title=_(
-            u'Latitudea',
+            "Latitudea",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=True,
         readonly=False,
     )
 
     lon = schema.TextLine(
         title=_(
-            u'Longitudea',
+            "Longitudea",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=True,
         readonly=False,
     )
     searchable("beste_izenak")
     beste_izenak = schema.Text(
         title=_(
-            u'Beste izenak',
+            "Beste izenak",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=False,
         readonly=False,
     )
     searchable("mendizerra")
     mendizerra = schema.TextLine(
         title=_(
-            u'Mendizerra',
+            "Mendizerra",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=False,
         readonly=False,
     )
     searchable("sektorea")
     sektorea = schema.TextLine(
         title=_(
-            u'Sektorea',
+            "Sektorea",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=False,
         readonly=False,
     )
 
     zailtasuna = schema.Int(
         title=_(
-            u'Zailtasuna',
+            "Zailtasuna",
         ),
         description=_(
-            u'',
+            "",
         ),
         required=False,
         default=1,
@@ -104,31 +105,31 @@ class IMendia(model.Schema):
 
     osm_kodea = schema.TextLine(
         title=_(
-            'OSM kodea',
+            "OSM kodea",
         ),
         description=_(
-            '',
+            "",
         ),
-        default=u'',
+        default="",
         required=False,
         readonly=False,
     )
 
     egoera = schema.TextLine(
         title=_(
-            u'Egoera',
+            "Egoera",
         ),
         description=_(
-            u'',
+            "",
         ),
         required=False,
         readonly=True,
     )
 
+
 @implementer(IMendia)
 class Mendia(Container):
-    """ Content-type class for IMendia
-    """
+    """Content-type class for IMendia"""
 
     @property
     def egoera(self):

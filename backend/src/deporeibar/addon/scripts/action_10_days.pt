@@ -1,16 +1,16 @@
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:metal="http://xml.zope.org/namespaces/metal"
-  xmlns:tal="http://xml.zope.org/namespaces/tal"
-  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-  i18n:domain="deporeibar.addon"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      i18n:domain="deporeibar.addon"
 >
   <body>
     <p>Kaixo,</p>
 
     <p>
       Gure datuen arabera Baietz 312 mendi! proiektuan
-      <strong tal:content="python:mendia.title">Anboto</strong> mendia igotzeko
+      <strong tal:content="python:mendia.title">Anboto</strong>
+       mendia igotzeko
       erreserba egin zenuen egun honetarako:
       <strong tal:content="python:igoera.eguna.isoformat()">2024-02-04</strong>.
     </p>
@@ -32,15 +32,16 @@
     <p>Hola,</p>
 
     <p>
-      Según nuestros datos reservaste el monte
-      <strong tal:content="python:mendia.title">Anboto</strong> para el día
+      Seg&uacute;n nuestros datos reservaste el monte
+      <strong tal:content="python:mendia.title">Anboto</strong>
+       para el d&iacute;a
       <strong tal:content="python:igoera.eguna.isoformat()">2024-02-04</strong>
       dentro del proyecto de subir 312 montes.
     </p>
 
     <p>
-      Ya han pasado 10 días desde esa fecha y como no tenemos noticias hemos
-      liberado ese monte automáticamente.
+      Ya han pasado 10 d&iacute;as desde esa fecha y como no tenemos noticias hemos
+      liberado ese monte autom&aacute;ticamente.
     </p>
 
     <p>

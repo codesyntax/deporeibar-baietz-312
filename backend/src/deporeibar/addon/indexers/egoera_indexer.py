@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-
-from deporeibar.addon.content.mendia import IMendia
 from deporeibar.addon.content.igoera import IIgoera
+from deporeibar.addon.content.mendia import IMendia
 from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer import indexer
 

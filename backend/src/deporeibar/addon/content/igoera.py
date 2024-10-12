@@ -1,28 +1,29 @@
-# -*- coding: utf-8 -*-
 from Acquisition import aq_parent
+from deporeibar.addon import _
+from plone import api
+
 # from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.dexterity.content import Container
+
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
+
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from plone import api
-
-from deporeibar.addon import _
 
 
 class IIgoera(model.Schema):
-    """ Marker interface and Dexterity Python Schema for Igoera
-    """
+    """Marker interface and Dexterity Python Schema for Igoera"""
+
     eguna = schema.Date(
         title=_(
-            u'Eguna',
+            "Eguna",
         ),
         description=_(
-            u'',
+            "",
         ),
         # defaultFactory=get_default_,
         required=True,
@@ -31,12 +32,12 @@ class IIgoera(model.Schema):
 
     oharrak = schema.Text(
         title=_(
-            u'Oharrak',
+            "Oharrak",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=False,
         readonly=False,
     )
@@ -69,10 +70,10 @@ class IIgoera(model.Schema):
 
     mendizaleak = schema.Text(
         title=_(
-            u'Mendia igo zuten pertsonak',
+            "Mendia igo zuten pertsonak",
         ),
         description=_(
-            u'Idatzi bat lerro bakoitzean',
+            "Idatzi bat lerro bakoitzean",
         ),
         required=False,
         readonly=False,
@@ -80,12 +81,12 @@ class IIgoera(model.Schema):
 
     mendia_igo_duena = schema.TextLine(
         title=_(
-            u'Agendaren bistan agertuko den izena',
+            "Agendaren bistan agertuko den izena",
         ),
         description=_(
-            u'',
+            "",
         ),
-        default=u'',
+        default="",
         required=False,
         readonly=False,
     )
@@ -93,11 +94,10 @@ class IIgoera(model.Schema):
 
 @implementer(IIgoera)
 class Igoera(Container):
-    """ Content-type class for IIgoera
-    """
+    """Content-type class for IIgoera"""
 
     def igoera_mendia_izena(self):
         return aq_parent(self).title
 
     def erreserba_egilea(self):
-        return api.user.get(userid=self.Creator()).getProperty('fullname')
+        return api.user.get(userid=self.Creator()).getProperty("fullname")

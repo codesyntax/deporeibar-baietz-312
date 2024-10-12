@@ -1,33 +1,45 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <object name="portal_catalog">
-  <column value="mendizerra"/>
-  <column value="sektorea"/>
-  <column value="altuera"/>
-  <column value="zailtasuna"/>
-  <column value="egoera"/>
-  <column value="erreserbak"/>
-  <column value="eguna"/>
-  <column value="creators"/>
-  <column value="created"/>
+  <column value="mendizerra" />
+  <column value="sektorea" />
+  <column value="altuera" />
+  <column value="zailtasuna" />
+  <column value="egoera" />
+  <column value="erreserbak" />
+  <column value="eguna" />
+  <column value="creators" />
+  <column value="created" />
 
 
-  <index name="mendizerra" meta_type="FieldIndex">
-    <indexed_attr value="mendizerra"/>
+  <index meta_type="FieldIndex"
+         name="mendizerra"
+  >
+    <indexed_attr value="mendizerra" />
   </index>
-  <index name="sektorea" meta_type="FieldIndex">
-    <indexed_attr value="sektorea"/>
+  <index meta_type="FieldIndex"
+         name="sektorea"
+  >
+    <indexed_attr value="sektorea" />
   </index>
-  <index name="altuera" meta_type="FieldIndex">
-    <indexed_attr value="altuera"/>
+  <index meta_type="FieldIndex"
+         name="altuera"
+  >
+    <indexed_attr value="altuera" />
   </index>
-  <index name="zailtasuna" meta_type="FieldIndex">
-    <indexed_attr value="zailtasuna"/>
+  <index meta_type="FieldIndex"
+         name="zailtasuna"
+  >
+    <indexed_attr value="zailtasuna" />
   </index>
-  <index name="egoera_igoera" meta_type="FieldIndex">
-    <indexed_attr value="egoera_igoera"/>
+  <index meta_type="FieldIndex"
+         name="egoera_igoera"
+  >
+    <indexed_attr value="egoera_igoera" />
   </index>
-  <index name="egoera_mendia" meta_type="FieldIndex">
-    <indexed_attr value="egoera_mendia"/>
+  <index meta_type="FieldIndex"
+         name="egoera_mendia"
+  >
+    <indexed_attr value="egoera_mendia" />
   </index>
 
 </object>

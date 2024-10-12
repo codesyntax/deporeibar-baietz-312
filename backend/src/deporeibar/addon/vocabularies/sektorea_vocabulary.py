@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-
 # from plone import api
 from deporeibar.addon import _
+from plone import api
 from plone.dexterity.interfaces import IDexterityContent
 from zope.globalrequest import getRequest
 from zope.interface import implementer
@@ -10,12 +9,9 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-from plone import api
-
 @implementer(IVocabularyFactory)
-class SektoreaVocabulary(object):
-    """
-    """
+class SektoreaVocabulary:
+    """ """
 
     def __call__(self, context):
         # Just an example list of content for our vocabulary,

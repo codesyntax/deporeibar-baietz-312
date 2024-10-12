@@ -52,7 +52,7 @@
 
   <include package=".api" />
 
-    <include package=".vocabularies" />
+  <include package=".vocabularies" />
 
 
   <include package=".indexers" />

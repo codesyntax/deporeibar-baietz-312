@@ -1,7 +1,13 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<object name="portal_types" meta_type="Plone Types Tool">
+<?xml version="1.0" encoding="utf-8"?>
+<object meta_type="Plone Types Tool"
+        name="portal_types"
+>
   <property name="title">Controls the available contenttypes in your portal</property>
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
-  <object name="Mendia" meta_type="Dexterity FTI"/>
-  <object name="Igoera" meta_type="Dexterity FTI"/>
+  <object meta_type="Dexterity FTI"
+          name="Mendia"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Igoera"
+  />
 </object>

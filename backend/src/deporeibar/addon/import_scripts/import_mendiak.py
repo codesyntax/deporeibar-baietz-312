@@ -1,21 +1,21 @@
-# -*- coding: utf-8 -*-
-
 import csv
-import requests
 import random
+import requests
 
-BASE = 'http://localhost:8080/Plone/mendiak'
+
+BASE = "http://localhost:8080/Plone/mendiak"
 AUTH = ("admin", "admin")
-HEADERS = {'Accept': 'application/json'}
+HEADERS = {"Accept": "application/json"}
+
 
 def get_text_values(item):
     text = []
 
     for k, v in item.items():
         if k.startswith("name:"):
-            text.extend(v.split(';'))
+            text.extend(v.split(";"))
         if k.startswith("alt_name:"):
-            text.extend(v.split(';'))
+            text.extend(v.split(";"))
         if k.startswith("official_name"):
             text.extend(v.split(";"))
 
@@ -33,15 +33,19 @@ def get_mendia(item):
             "mendizerra": item.get("MENDIZERRA", ""),
             "sektorea": item.get("SEKTOREA", ""),
             # XXX
-            #"zailtasuna": item["ZAILTASUNA"],
+            # "zailtasuna": item["ZAILTASUNA"],
             "zailtasuna": 1,
             "beste_izenak": get_text_values(item),
-            "osm_kodea": item["id"]
+            "osm_kodea": item["id"],
         }
     except Exception as exc:
-        import pdb; pdb.set_trace(); a=1
+        import pdb
+
+        pdb.set_trace()
+        a = 1
 
         return {}
+
 
 def import_mendia(item):
     mendia = get_mendia(item)
@@ -56,7 +60,7 @@ def import_mendia(item):
 
 
 def import_mendiak(fitxategia):
-    with open(fitxategia, 'r') as fp:
+    with open(fitxategia) as fp:
         dialect = csv.Sniffer().sniff(fp.read(1024))
         fp.seek(0)
         first = fp.readline()
@@ -71,9 +75,7 @@ def import_mendiak(fitxategia):
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(
-        description="Mendien CSV fitxategiak importatu"
-    )
+    parser = argparse.ArgumentParser(description="Mendien CSV fitxategiak importatu")
     parser.add_argument(
         "fitxategiak",
         nargs="+",
