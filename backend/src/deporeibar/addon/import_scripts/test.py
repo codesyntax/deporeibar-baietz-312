@@ -1,11 +1,11 @@
+import base64
+import os
+import random
 import requests
 
 
 headers = {"Accept": "application/json"}
 auth = ("admin", "admin")
-import base64
-import os
-import random
 
 
 def main():

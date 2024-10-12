@@ -1,5 +1,4 @@
 import csv
-import random
 import requests
 
 
@@ -39,11 +38,7 @@ def get_mendia(item):
             "osm_kodea": item["id"],
         }
     except Exception as exc:
-        import pdb
-
-        pdb.set_trace()
-        a = 1
-
+        print(exc)
         return {}
 
 

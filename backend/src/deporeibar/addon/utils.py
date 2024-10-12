@@ -1,4 +1,3 @@
-from deporeibar.addon import _
 from email.headerregistry import Address
 from email.message import EmailMessage
 from plone import api

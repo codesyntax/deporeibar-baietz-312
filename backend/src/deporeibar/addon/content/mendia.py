@@ -3,7 +3,6 @@
 from deporeibar.addon import _
 from plone.app.dexterity.textindexer import searchable
 from plone.dexterity.content import Container
-from plone.schema.jsonfield import JSONField
 
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model

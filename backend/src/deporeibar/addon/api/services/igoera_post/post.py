@@ -1,11 +1,6 @@
 from plone import api
 from plone.restapi.deserializer import json_body
-from plone.restapi.interfaces import IExpandableElement
-from plone.restapi.services import Service
 from plone.restapi.services.content.add import FolderPost
-from zope.component import adapter
-from zope.interface import implementer
-from zope.interface import Interface
 
 
 class IgoeraPost(FolderPost):
