@@ -32,6 +32,7 @@ check-frontend:
   image: node:22-alpine
   stage: test
   before_script:
+    - apk add --no-cache make bash python3 ncurses openssh-client-common
     - corepack enable
     - pnpm config set store-dir .pnpm-store
   script:
@@ -55,6 +56,7 @@ test-frontend:
   image: node:22-alpine
   stage: test
   before_script:
+    - apk add --no-cache make bash python3 ncurses openssh-client-common
     - corepack enable
     - pnpm config set store-dir .pnpm-store
 
