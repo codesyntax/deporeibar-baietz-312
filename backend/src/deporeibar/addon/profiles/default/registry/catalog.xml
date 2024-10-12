@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<registry
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="clms.types">
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.zailtasuna">
+      <value key="title" i18n:translate="">Zailtasuna</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.ZailtasunaVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+<records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.altuera">
+      <value key="title" i18n:translate="">Altuera</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.AltueraVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+
+<records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.altuera_int">
+      <value key="title" i18n:translate="">Altuera (int)</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.AltueraIntVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+
+
+<records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.sektorea">
+      <value key="title" i18n:translate="">Sektorea</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.SektoreaVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.mendizerra">
+      <value key="title" i18n:translate="">Mendizerra</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.MendizerraVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.egoera_mendia">
+      <value key="title" i18n:translate="">Egoera (mendia)</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.EgoeraMendiaVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+    <records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.egoera_igoera">
+      <value key="title" i18n:translate="">Egoera (igoera)</value>
+      <value key="description" i18n:translate=""></value>
+      <value key="enabled">True</value>
+      <value key="sortable">True</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.any</element>
+          <element>plone.app.querystring.operation.selection.all</element>
+      </value>
+      <value key="vocabulary">deporeibar.addon.EgoeraIgoeraVocabulary</value>
+      <value key="group" i18n:translate="">Metadata</value>
+  </records>
+</registry>

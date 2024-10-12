@@ -1,0 +1,13 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      factory=".zailtasuna_indexer.dummy"
+      name="zailtasuna"
+      />
+
+  <adapter
+      factory=".zailtasuna_indexer.zailtasuna_indexer"
+      name="zailtasuna"
+      />
+
+</configure>

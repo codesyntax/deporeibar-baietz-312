@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <layers>
-  <layer interface="deporeibar.addon.interfaces.IBrowserLayer"
-         name="deporeibar.addon"
-  />
+  <layer
+      name="deporeibar.addon"
+      interface="deporeibar.addon.interfaces.IDeporeibarAddonLayer"
+      />
 </layers>

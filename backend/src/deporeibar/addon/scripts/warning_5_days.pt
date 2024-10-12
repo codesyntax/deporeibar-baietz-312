@@ -1,0 +1,62 @@
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="deporeibar.addon"
+>
+  <body>
+    <p>Kaixo,</p>
+
+    <p>
+      Gure datuen arabera Baietz 312 mendi! proiektuan
+      <strong tal:content="python:mendia.title">Anboto</strong> mendia igotzeko
+      erreserba egin zenuen egun honetarako:
+      <strong tal:content="python:igoera.eguna.isoformat()">2024-02-04</strong>.
+    </p>
+
+    <p>
+      Jada egun batzuk pasatu dira egun horretatik eta oraindik ez dugu zure
+      igoeraren berri, hori dela-eta gure webgunera sartu
+      <a href="https://312.deporeibar.com">"Nire Igoerak"</a> atalera joan eta
+      igoeraren berri ematea eskatzen dizugu. Berdin da mendia egin duzun ala
+      ez, baina mesedez esaiguzu, batez ere joan ez bazara. Horrela mendi hori
+      "askatu" egin dezakezu eta beste pertsona batek egin dezan utzi.
+    </p>
+
+    <p>
+      Jakin ezazu, zuk erreserbatu zenuen egunetik 10 egun pasatu badira eta
+      zure berri ez badugu, mendi hori automatikoki askatuko dugula. Badakizu
+      nahiz eta mendi hori "askatu", beste egun baterako erreserbatu dezakezula.
+    </p>
+
+    <p>Eskerrik asko proiektuan parte hartzeagatik</p>
+
+    <br />
+
+    <p>Hola,</p>
+
+    <p>
+      Según nuestros datos reservaste el monte
+      <strong tal:content="python:mendia.title">Anboto</strong> para el día
+      <strong tal:content="python:igoera.eguna.isoformat()">2024-02-04</strong>
+      dentro del proyecto de subir 312 montes.
+    </p>
+
+    <p>
+      Ya han pasado unos días desde esa fecha y como no tenemos noticias te
+      pedimos que <a href="https://312.deporeibar.com">accedas a la web</a> y
+      nos indiques si lo has subido o no, para que, si no lo has hecho, el monte
+      pueda ser "liberado" para que lo pueda subir otro.
+    </p>
+
+    <p>
+      Recuerda que una vez transcurridos 10 días desde la fecha para la que
+      reservaste el monte y si no nos has dicho nada, el monte se liberará
+      automáticamente. Ya sabes que aunque no hayas ido al monte, puedes
+      liberarlo y volver a reservarlo para otra fecha.
+    </p>
+
+    <p>Gracias por participar en el proyecto</p>
+  </body>
+</html>

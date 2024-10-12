@@ -1,7 +1,14 @@
-<configure xmlns="http://namespaces.zope.org/zope">
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="deporeibar.addon">
 
-  <!-- Indexers/Metadata -->
+ <!-- -*- extra stuff goes here -*- -->
 
-  <!-- -*- extra stuff goes here -*- -->
+  <include file="egoera_indexer.zcml" />
+
+  <include file="zailtasuna_indexer.zcml" />
+
+  <include file="altuera_indexer.zcml" />
+
 
 </configure>

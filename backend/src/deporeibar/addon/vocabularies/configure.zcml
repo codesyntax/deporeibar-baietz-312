@@ -1,5 +1,49 @@
-<configure xmlns="http://namespaces.zope.org/zope">
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="deporeibar.addon"
+    >
 
   <!-- -*- extra stuff goes here -*- -->
+
+  <utility
+      name="deporeibar.addon.EgoeraIgoeraVocabulary"
+      component=".egoera_igoera_vocabulary.EgoeraIgoeraVocabularyFactory"
+      />
+
+  <utility
+      name="deporeibar.addon.EgoeraMendiaVocabulary"
+      component=".egoera_mendia_vocabulary.EgoeraMendiaVocabularyFactory"
+      />
+
+
+  <utility
+      name="deporeibar.addon.AltueraVocabulary"
+      component=".altuera_vocabulary.AltueraVocabularyFactory"
+      />
+
+  <utility
+      name="deporeibar.addon.AltueraIntVocabulary"
+      component=".altuera_int_vocabulary.AltueraVocabularyFactory"
+      />
+
+
+
+  <utility
+      name="deporeibar.addon.ZailtasunaVocabulary"
+      component=".zailtasuna_vocabulary.ZailtasunaVocabularyFactory"
+      />
+
+
+  <utility
+      name="deporeibar.addon.SektoreaVocabulary"
+      component=".sektorea_vocabulary.SektoreaVocabularyFactory"
+      />
+
+
+  <utility
+      name="deporeibar.addon.MendizerraVocabulary"
+      component=".mendizerra_vocabulary.MendizerraVocabularyFactory"
+      />
+
 
 </configure>

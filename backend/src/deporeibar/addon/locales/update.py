@@ -1,55 +1,52 @@
-"""Update locales."""
+# -*- coding: utf-8 -*-
 
-from pathlib import Path
-
-import logging
-import re
+import os
+import pkg_resources
 import subprocess
 
 
-logger = logging.getLogger("i18n")
-logger.setLevel(logging.DEBUG)
-
-
-PATTERN = r"^[a-z]{2}.*"
-domains = ("deporeibar.addon",)
-cwd = Path.cwd()
-target_path = Path(__file__).parent.parent.resolve()
-locale_path = target_path / "locales"
-
-i18ndude = cwd / "bin" / "i18ndude"
-if not i18ndude.exists():
-    i18ndude = cwd / "i18ndude"
+domain = 'deporeibar.addon'
+os.chdir(pkg_resources.resource_filename(domain, ''))
+os.chdir('../../../')
+target_path = 'src/deporeibar/addon/'
+locale_path = target_path + 'locales/'
+i18ndude = './bin/i18ndude'
 
 # ignore node_modules files resulting in errors
 excludes = '"*.html *json-schema*.xml"'
 
 
-def locale_folder_setup(domain: str):
-    languages = [path for path in locale_path.glob("*") if path.is_dir()]
-    for lang_folder in languages:
-        lc_messages_path = lang_folder / "LC_MESSAGES"
-        lang = lang_folder.name
-        if lc_messages_path.exists():
+def locale_folder_setup():
+    os.chdir(locale_path)
+    languages = [d for d in os.listdir('.') if os.path.isdir(d)]
+    for lang in languages:
+        folder = os.listdir(lang)
+        if 'LC_MESSAGES' in folder:
             continue
-        elif re.match(PATTERN, lang):
-            lc_messages_path.mkdir()
-            cmd = (
-                f"msginit --locale={lang} "
-                f"--input={locale_path}/{domain}.pot "
-                f"--output={locale_path}/{lang}/LC_MESSAGES/{domain}.po"
+        else:
+            lc_messages_path = lang + '/LC_MESSAGES/'
+            os.mkdir(lc_messages_path)
+            cmd = 'msginit --locale={0} --input={1}.pot --output={2}/LC_MESSAGES/{3}.po'.format(  # NOQA: E501
+                lang,
+                domain,
+                lang,
+                domain,
             )
             subprocess.call(
                 cmd,
                 shell=True,
             )
 
+    os.chdir('../../../../')
 
-def _rebuild(domain: str):
-    cmd = (
-        f"{i18ndude} rebuild-pot --pot {locale_path}/{domain}.pot "
-        f"--exclude {excludes} "
-        f"--create {domain} {target_path}"
+
+def _rebuild():
+    cmd = '{i18ndude} rebuild-pot --pot {locale_path}/{domain}.pot --exclude {excludes} --create {domain} {target_path}'.format(  # NOQA: E501
+        i18ndude=i18ndude,
+        locale_path=locale_path,
+        domain=domain,
+        target_path=target_path,
+        excludes=excludes,
     )
     subprocess.call(
         cmd,
@@ -57,10 +54,13 @@ def _rebuild(domain: str):
     )
 
 
-def _sync(domain: str):
-    cmd = (
-        f"{i18ndude} sync --pot {locale_path}/{domain}.pot "
-        f"{locale_path}/*/LC_MESSAGES/{domain}.po"
+def _sync():
+    cmd = '{0} sync --pot {1}/{2}.pot {3}*/LC_MESSAGES/{4}.po'.format(
+        i18ndude,
+        locale_path,
+        domain,
+        locale_path,
+        domain,
     )
     subprocess.call(
         cmd,
@@ -69,11 +69,6 @@ def _sync(domain: str):
 
 
 def update_locale():
-    if i18ndude.exists():
-        for domain in domains:
-            logger.info(f"Updating translations for {domain}")
-            locale_folder_setup(domain)
-            _rebuild(domain)
-            _sync(domain)
-    else:
-        logger.error("Not able to find i18ndude")
+    locale_folder_setup()
+    _sync()
+    _rebuild()

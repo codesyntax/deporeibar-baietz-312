@@ -1,13 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <object name="portal_catalog">
-  <!-- Index
-  <index meta_type="FieldIndex"
-         name="industry"
-  >
-    <indexed_attr value="industry" />
+  <column value="mendizerra"/>
+  <column value="sektorea"/>
+  <column value="altuera"/>
+  <column value="zailtasuna"/>
+  <column value="egoera"/>
+  <column value="erreserbak"/>
+  <column value="eguna"/>
+  <column value="creators"/>
+  <column value="created"/>
+
+
+  <index name="mendizerra" meta_type="FieldIndex">
+    <indexed_attr value="mendizerra"/>
   </index>
--->
-  <!-- Metadata
-  <column value="industry" />
--->
+  <index name="sektorea" meta_type="FieldIndex">
+    <indexed_attr value="sektorea"/>
+  </index>
+  <index name="altuera" meta_type="FieldIndex">
+    <indexed_attr value="altuera"/>
+  </index>
+  <index name="zailtasuna" meta_type="FieldIndex">
+    <indexed_attr value="zailtasuna"/>
+  </index>
+  <index name="egoera_igoera" meta_type="FieldIndex">
+    <indexed_attr value="egoera_igoera"/>
+  </index>
+  <index name="egoera_mendia" meta_type="FieldIndex">
+    <indexed_attr value="egoera_mendia"/>
+  </index>
+
 </object>

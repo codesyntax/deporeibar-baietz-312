@@ -1,9 +1,33 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="deporeibar.addon"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="plone"
     >
 
-  <!-- -*- extra stuff goes here -*- -->
+  <configure zcml:condition="installed AccessControl.security">
+    <!-- -*- extra stuff goes here -*- -->
+
+    <permission
+        id="deporeibar.addon.AddIgoera"
+        title="deporeibar.addon: Add Igoera"
+        />
+
+
+    <permission
+        id="deporeibar.addon.AddMendia"
+        title="deporeibar.addon: Add Mendia"
+        />
+
+    <permission
+        id="deporeibar.addon.add.igoera"
+        title="deporeibar.addon.add.igoera"
+        />
+    <permission
+        id="deporeibar.addon.modify.igoera"
+        title="deporeibar.addon.modify.igoera"
+        />
+
+
+  </configure>
 
 </configure>

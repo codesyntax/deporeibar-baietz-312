@@ -1,49 +1,55 @@
-from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE
+# -*- coding: utf-8 -*-
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
-from plone.app.testing import applyProfile
-from plone.app.testing import FunctionalTesting
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import PloneSandboxLayer
-from plone.testing.zope import WSGI_SERVER_FIXTURE
+from plone.app.testing import (
+    applyProfile,
+    FunctionalTesting,
+    IntegrationTesting,
+    PLONE_FIXTURE
+    PloneSandboxLayer,
+)
+from plone.testing import z2
 
-import deporeibar.addon  # noQA
+import deporeibar.addon
 
 
-class Layer(PloneSandboxLayer):
-    defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
+class DeporeibarAddonLayer(PloneSandboxLayer):
+
+    defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
+        import plone.app.dexterity
+        self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
-
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=deporeibar.addon)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, "deporeibar.addon:default")
+        applyProfile(portal, 'deporeibar.addon:default')
 
 
-FIXTURE = Layer()
+DEPOREIBAR_ADDON_FIXTURE = DeporeibarAddonLayer()
 
-INTEGRATION_TESTING = IntegrationTesting(
-    bases=(FIXTURE,),
-    name="Deporeibar.AddonLayer:IntegrationTesting",
+
+DEPOREIBAR_ADDON_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(DEPOREIBAR_ADDON_FIXTURE,),
+    name='DeporeibarAddonLayer:IntegrationTesting',
 )
 
 
-FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(FIXTURE, WSGI_SERVER_FIXTURE),
-    name="Deporeibar.AddonLayer:FunctionalTesting",
+DEPOREIBAR_ADDON_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(DEPOREIBAR_ADDON_FIXTURE,),
+    name='DeporeibarAddonLayer:FunctionalTesting',
 )
 
 
-ACCEPTANCE_TESTING = FunctionalTesting(
+DEPOREIBAR_ADDON_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        FIXTURE,
+        DEPOREIBAR_ADDON_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        WSGI_SERVER_FIXTURE,
+        z2.ZSERVER_FIXTURE,
     ),
-    name="Deporeibar.AddonLayer:AcceptanceTesting",
+    name='DeporeibarAddonLayer:AcceptanceTesting',
 )

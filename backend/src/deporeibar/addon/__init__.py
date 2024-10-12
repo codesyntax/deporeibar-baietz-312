@@ -1,12 +1,6 @@
+# -*- coding: utf-8 -*-
 """Init and utils."""
-
 from zope.i18nmessageid import MessageFactory
 
-import logging
 
-
-PACKAGE_NAME = "deporeibar.addon"
-
-_ = MessageFactory(PACKAGE_NAME)
-
-logger = logging.getLogger(PACKAGE_NAME)
+_ = MessageFactory('deporeibar.addon')
