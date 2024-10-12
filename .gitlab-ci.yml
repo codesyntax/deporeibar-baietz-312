@@ -42,8 +42,10 @@ variables:
 
 test-backend:
   stage: test
+  image:
+    - python:3-bookworm
   before_script:
-    - apk add --no-cache make bash python3 python3-dev ncurses openssh-client-common git gcc
+    - apt install build-essential python3 python3-dev git
   script:
     - cd backend
     - make install
