@@ -29,7 +29,7 @@ variables:
 #     - make check
 
 check-frontend:
-  image: node:22
+  image: node:22-alpine
   stage: test
   before_script:
     - corepack enable
@@ -52,7 +52,7 @@ test-backend:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 
 test-frontend:
-  image: node:22
+  image: node:22-alpine
   stage: test
   before_script:
     - corepack enable
