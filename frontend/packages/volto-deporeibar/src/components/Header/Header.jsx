@@ -26,7 +26,6 @@ const messages = defineMessages({
 
 import { LoggedTools } from '../LoggedTools';
 
-
 const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   return (
     <>
@@ -38,7 +37,6 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
             {!token && <Anontools />}
             {token && <LoggedTools />}
             <UniversalLink href="/kontaktua">Kontaktua</UniversalLink>
-
           </div>
         </div>
         <div className="logo-nav-wrapper">

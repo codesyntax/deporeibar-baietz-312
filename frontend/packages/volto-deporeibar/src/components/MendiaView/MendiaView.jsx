@@ -171,7 +171,6 @@ export const MendiaView = (props) => {
                     )}
                   </TableCell>
                   <TableCell>
-
                     <UniversalLink item={item}>
                       <FormattedMessage id="ikusi" defaultMessage="Ikusi" />
                     </UniversalLink>

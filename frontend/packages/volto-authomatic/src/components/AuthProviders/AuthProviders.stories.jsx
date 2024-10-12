@@ -34,22 +34,12 @@ OneProviderRegister.args = {
 
 export const MultipleProvidersLogin = StoryComponent.bind({});
 MultipleProvidersLogin.args = {
-  providers: [
-    providers.facebook,
-    providers.github,
-    providers.microsoft,
-    providers.google,
-  ],
+  providers: [providers.facebook, providers.github, providers.microsoft, providers.google],
   action: 'login',
 };
 export const MultipleProvidersRegister = StoryComponent.bind({});
 MultipleProvidersRegister.args = {
-  providers: [
-    providers.facebook,
-    providers.github,
-    providers.microsoft,
-    providers.google,
-  ],
+  providers: [providers.facebook, providers.github, providers.microsoft, providers.google],
   action: 'register',
 };
 

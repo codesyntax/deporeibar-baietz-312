@@ -64,7 +64,6 @@ export const Erreserbatu = (props) => {
 
   const igoeraRef = React.useRef(igoera);
 
-
   const userSubRequestToken = `${user?.sub}-${item.UID}`;
 
   React.useEffect(() => {

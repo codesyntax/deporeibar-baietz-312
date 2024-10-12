@@ -66,7 +66,6 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
     <>
       <div className="header">
         <div className="tools-wrapper">
-
           <LanguageSelector />
           <div className="tools">
             {!token && <Anontools />}

@@ -36,16 +36,33 @@ const MendiKontaketakBlockView = ({ className }) => {
   const search = useSelector((state) => state.search.items);
 
   useEffect(() => {
-    dispatch(searchContent('/', { portal_type: 'Mendia', b_size: 999 , review_state: 'published'}));
+    dispatch(
+      searchContent('/', {
+        portal_type: 'Mendia',
+        b_size: 999,
+        review_state: 'published',
+      }),
+    );
   }, [dispatch]);
 
-  const zain = search.filter((item) => item.egoera_mendia === 'zain' && item['@id'].includes('/mendiak'));
-  const eginda = search.filter((item) => item.egoera_mendia === 'eginda' && item['@id'].includes('/mendiak'));
-  const eginGabe = search.filter((item) => item.egoera_mendia === 'egin-gabe' && item['@id'].includes('/mendiak'));
+  const zain = search.filter(
+    (item) => item.egoera_mendia === 'zain' && item['@id'].includes('/mendiak'),
+  );
+  const eginda = search.filter(
+    (item) =>
+      item.egoera_mendia === 'eginda' && item['@id'].includes('/mendiak'),
+  );
+  const eginGabe = search.filter(
+    (item) =>
+      item.egoera_mendia === 'egin-gabe' && item['@id'].includes('/mendiak'),
+  );
   const proposatutakoak = search.filter((item) =>
     ['proposatutakoa', 'proposatutakoa-eginda'].includes(item.egoera_mendia),
   );
-  const besteak = search.filter((item) => item.egoera_mendia === 'eginda' && !item['@id'].includes('/mendiak'));
+  const besteak = search.filter(
+    (item) =>
+      item.egoera_mendia === 'eginda' && !item['@id'].includes('/mendiak'),
+  );
 
   const MyCounter = (props) => {
     const { delay = 0, duration = 6, end, title } = props;
@@ -87,7 +104,7 @@ const MendiKontaketakBlockView = ({ className }) => {
         title={intl.formatMessage(messages.proposatutakoak)}
         description="XXXX"
       />
-          <MyCounter
+      <MyCounter
         end={besteak.length}
         title={intl.formatMessage(messages.besteak)}
         description="XXXX"

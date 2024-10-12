@@ -1,3 +1,3 @@
-import MultilingualRedirector from "./MultilingualRedirector";
+import MultilingualRedirector from './MultilingualRedirector';
 
 export default MultilingualRedirector;

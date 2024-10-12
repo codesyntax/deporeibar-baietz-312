@@ -11,7 +11,7 @@ const messages = defineMessages({
   site: {
     id: 'Baietz 312 mendi!',
     defaultMessage: 'Baietz 312 mendi!',
-  }
+  },
 });
 
 const Logo = () => {

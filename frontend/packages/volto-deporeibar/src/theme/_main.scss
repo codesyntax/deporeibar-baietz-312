@@ -127,8 +127,8 @@ p {
 }
 
 .item-mendia-igoera > .content p.igoera-details-oharrak {
-  padding-left: 50px;
   padding-bottom: 30px;
+  padding-left: 50px;
 }
 
 .item-mendia .content h2 a {
@@ -137,8 +137,8 @@ p {
 }
 
 .item-mendia-igoera .content h2 a {
-  text-align: center;
   display: inline-block;
+  text-align: center;
   @include text-heading-h2();
 }
 
@@ -172,9 +172,9 @@ p {
 
 .counters {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   .counter {
     margin: 0 10px;
   }
@@ -184,12 +184,12 @@ p {
     border-radius: 50%;
 
     .counter-wrapper {
+      display: flex;
       width: 200px;
       height: 200px;
-      display: flex;
       align-items: center;
-      text-align: center;
       justify-content: center;
+      text-align: center;
     }
   }
 
@@ -214,8 +214,8 @@ p {
   }
   ul.ui.list li {
     display: inline-block;
-    padding-left: 20px;
     padding-bottom: 20px;
+    padding-left: 20px;
   }
 
   ul.ui.list li > a {

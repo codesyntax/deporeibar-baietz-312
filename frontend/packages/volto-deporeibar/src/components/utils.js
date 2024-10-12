@@ -42,13 +42,13 @@ export const egoerak = {
     </Label>
   ),
   'eginda-baliogabe': (
-        <Label color="brown" as="button">
+    <Label color="brown" as="button">
       <FormattedMessage
         id="egindaBaliogabe"
         defaultMessage="Eginda balio gabe"
       />
     </Label>
-  )
+  ),
 };
 
 export const icons = {

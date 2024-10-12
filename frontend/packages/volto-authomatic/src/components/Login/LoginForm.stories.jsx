@@ -30,21 +30,14 @@ NoProvider.args = {
 
 export const OneProvider = StoryComponent.bind({});
 OneProvider.args = {
-  providers: [
-    providers.github,
-  ],
+  providers: [providers.github],
   action: 'login',
   loading: false,
 };
 
 export const MultipleProviders = StoryComponent.bind({});
 MultipleProviders.args = {
-  providers: [
-    providers.facebook,
-    providers.github,
-    providers.microsoft,
-    providers.google,
-  ],
+  providers: [providers.facebook, providers.github, providers.microsoft, providers.google],
   action: 'login',
   loading: false,
 };
