@@ -1,5 +1,5 @@
 from AccessControl.SecurityManagement import newSecurityManager
-from deporeibar.addon.interfaces import IBrowserLayer
+from deporeibar.addon.interfaces import IDeporeibarAddonLayer
 from Products.CMFPlone.factory import _DEFAULT_PROFILE
 from Products.CMFPlone.factory import addPloneSite
 from Products.GenericSetup.tool import SetupTool

@@ -8,9 +8,9 @@ class TestSetupInstall:
 
     def test_browserlayer(self, browser_layers):
         """Test that IBrowserLayer is registered."""
-        from deporeibar.addon.interfaces import IBrowserLayer
+        from deporeibar.addon.interfaces import IDeporeibarAddonLayer
 
-        assert IBrowserLayer in browser_layers
+        assert IDeporeibarAddonLayer in browser_layers
 
     def test_latest_version(self, profile_last_version):
         """Test latest version of default profile."""

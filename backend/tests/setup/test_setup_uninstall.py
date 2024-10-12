@@ -14,6 +14,6 @@ class TestSetupUninstall:
 
     def test_browserlayer_not_registered(self, browser_layers):
         """Test that IBrowserLayer is not registered."""
-        from deporeibar.addon.interfaces import IBrowserLayer
+        from deporeibar.addon.interfaces import IDeporeibarAddonLayer
 
-        assert IBrowserLayer not in browser_layers
+        assert IDeporeibarAddonLayer not in browser_layers
