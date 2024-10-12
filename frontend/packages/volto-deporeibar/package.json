@@ -1,0 +1,38 @@
+{
+  "name": "volto-deporeibar",
+  "version": "1.0.0-alpha.0",
+  "description": "Eibarko Klub Deportiboaren Baietz 312 proiektuaren webgunea",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "CodeSyntax",
+  "homepage": "https://github.com/codesyntax/volto-deporeibar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:codesyntax/volto-deporeibar.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "release-it": "^17.1.1"
+  }
+}
