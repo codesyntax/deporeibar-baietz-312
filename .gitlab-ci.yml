@@ -20,6 +20,8 @@ variables:
   CONTAINER_FRONTEND_RELEASE_IMAGE: $CI_REGISTRY_IMAGE/frontend
   CONTAINER_VARNISH_RELEASE_IMAGE: $CI_REGISTRY_IMAGE/varnish
 
+
+check:
 # check-backend:
 #   stage: test
 #   before_script:
@@ -33,7 +35,6 @@ check-frontend:
   stage: test
   before_script:
     - corepack enable
-    - corepack prepare pnpm@latest-9 --activate
     - pnpm config set store-dir .pnpm-store
   script:
     - cd frontend
@@ -57,7 +58,6 @@ test-frontend:
   stage: test
   before_script:
     - corepack enable
-    - corepack prepare pnpm@latest-9 --activate
     - pnpm config set store-dir .pnpm-store
 
   script:
