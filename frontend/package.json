@@ -35,7 +35,10 @@
   "dependencies": {
     "@plone/volto": "workspace:*",
     "@plone/registry": "workspace:*",
-    "volto-deporeibar": "workspace:*"
+    "volto-deporeibar": "workspace:*",
+    "@plone-collective/volto-authomatic": "workspace:*",
+    "@mbarde/volto-fullcalendar-block": "workspace:*"
+
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"

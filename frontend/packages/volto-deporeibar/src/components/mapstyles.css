@@ -1,0 +1,18 @@
+/* #map {
+  height: 700px;
+} */
+
+#map {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.mapboxgl-canvas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

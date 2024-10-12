@@ -1,0 +1,1 @@
+export { IgoeraView } from './IgoeraView';

@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-04T08:15:19.384Z\n"
+"PO-Revision-Date: 2023-06-27 22:15-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language: es\n"
+"Language-Team: ES <LL@li.org>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8\n"
+"MIME-Version: 1.0\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Domain: volto\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. Default: "2-digit"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "2-digit"
+msgstr "2 dígitos"
+
+#. Default: "Calendar Settings"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Calendar Settings"
+msgstr "Configuración del calendario"
+
+#. Default: "Calendar URL"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Calendar URL"
+msgstr "Calendario URL"
+
+#. Default: "Day"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Day"
+msgstr "Día"
+
+#. Default: "Calendar"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "FullCalendar"
+msgstr "FullCalendar"
+
+#. Default: "If not set, current date is used."
+#: components/manage/Blocks/FullCalendar/messages
+msgid "If not set, current date is used."
+msgstr "Si no se establece, se utiliza la fecha actual."
+
+#. Default: "Initial date"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial date"
+msgstr "Fecha inicial"
+
+#. Default: "Initial view"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial view"
+msgstr "Vista inicial"
+
+#. Default: "List day"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List day"
+msgstr "Día de la lista"
+
+#. Default: "List month"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List month"
+msgstr "Mes de la lista"
+
+#. Default: "List week"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List week"
+msgstr "Semana de la lista"
+
+#. Default: "Long"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Long"
+msgstr "Largo"
+
+#. Default: "Month"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Month"
+msgstr "Mes"
+
+#. Default: "Must point to an iCal/ics file."
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Must point to an iCal/ics file."
+msgstr "Debe apuntar a un archivo iCal/ics."
+
+#. Default: "Next"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Next"
+msgstr "Próximo"
+
+#. Default: "Numeric"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Numeric"
+msgstr "Numérico"
+
+#. Default: "Previous"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Previous"
+msgstr "Previo"
+
+#. Default: "Short"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Short"
+msgstr "Corto"
+
+#. Default: "Title"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title"
+msgstr "Título"
+
+#. Default: "Title: Day format"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Day format"
+msgstr "Título: formato de día"
+
+#. Default: "Title: Month format"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Month format"
+msgstr "Título: formato de mes"
+
+#. Default: "Title: Year format"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Year format"
+msgstr "Título: formato de año"
+
+#. Default: "Today"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Today"
+msgstr "Hoy"
+
+#. Default: "Toolbar center"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar center"
+msgstr "Barra de herramientas al centro"
+
+#. Default: "Toolbar left"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar left"
+msgstr "Barra de herramientas a la izquierda"
+
+#. Default: "Toolbar right"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar right"
+msgstr "Barra de herramientas a la derecha"
+
+#. Default: "Week"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Week"
+msgstr "Semana"

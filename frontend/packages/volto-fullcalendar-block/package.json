@@ -1,0 +1,35 @@
+{
+  "name": "@mbarde/volto-fullcalendar-block",
+  "version": "0.7.0",
+  "author": "Matthias Barde",
+  "description": "volto-fullcalendar-block: Volto add-on",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mbarde/volto-fullcalendar-block.git"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "cypress:run": "./node_modules/cypress/bin/cypress run",
+    "cypress:open": "./node_modules/cypress/bin/cypress open"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "5.9.0",
+    "@fullcalendar/daygrid": "5.9.0",
+    "@fullcalendar/icalendar": "5.9.0",
+    "@fullcalendar/list": "5.9.0",
+    "@fullcalendar/react": "5.9.0",
+    "@fullcalendar/timegrid": "5.9.0"
+  },
+  "devDependencies": {
+    "@plone/scripts": "3.6.1",
+    "cypress": "11.1.0"
+  }
+}
