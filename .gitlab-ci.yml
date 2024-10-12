@@ -44,7 +44,8 @@ test-backend:
   stage: test
   image: python:3-bookworm
   before_script:
-    - apt install build-essential python3 python3-dev git
+    - apt update
+    - apt install build-essential python3 python-dev git
   script:
     - cd backend
     - make install
