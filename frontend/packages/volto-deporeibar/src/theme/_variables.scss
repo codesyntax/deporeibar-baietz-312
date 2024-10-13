@@ -1,0 +1,15 @@
+@use 'sass:map';
+
+$custom-fontname: 'Montserrat' !default;
+// Container widths
+//$layout-container-width: 1980px !default;
+$default-container-width: 1440px !default;
+$narrow-container-width: 940px !default;
+
+// Spacing
+$spacing-small: 10px !default;
+$spacing-medium: 20px !default;
+$spacing-large: 30px !default;
+$spacing-xlarge: 40px !default;
+
+$depor-color: #140fe6;

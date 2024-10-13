@@ -1,0 +1,347 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"POT-Creation-Date: 2024-10-12T08:03:27.611Z\n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: volto\n"
+
+#. Default: "Baietz 312 mendi!"
+#: components/Logo/Logo
+msgid "Baietz 312 mendi!"
+msgstr ""
+
+#. Default: "Browse"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Browse"
+msgstr ""
+
+#. Default: "Cancel"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Cancel"
+msgstr ""
+
+#. Default: "Drag and drop files from your computer onto this area or click the “Browse” button."
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Drag and drop files from your computer onto this area or click the “Browse” button."
+msgstr ""
+
+#. Default: "File size"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "File size"
+msgstr ""
+
+#. Default: "Filename"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Filename"
+msgstr ""
+
+#. Default: "Last modified"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Last modified"
+msgstr ""
+
+#. Default: "Preview"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Preview"
+msgstr ""
+
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "Upload files"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Upload files"
+msgstr ""
+
+#. Default: "Uploading files"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "Uploading files"
+msgstr ""
+
+#. Default: "Zain"
+#: components/Blocks/MendiKontaketa/View
+msgid "Zain"
+msgstr ""
+
+#. Default: "Altuera"
+#: components/MendiaView/MendiaView
+msgid "altuera"
+msgstr ""
+
+#. Default: "Argazki gehiago kargatu"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "argazkiGehiagoKargatu"
+msgstr ""
+
+#. Default: "Bertan behera"
+#: components/utils
+msgid "bertanBehera"
+msgstr ""
+
+#. Default: "Beste izenak"
+#: components/MendiaView/MendiaView
+msgid "besteIzenak"
+msgstr ""
+
+#. Default: "Beste igoerak"
+#: components/Blocks/MendiKontaketa/View
+msgid "besteak"
+msgstr ""
+
+#. Default: "Egin gabe"
+#: components/Blocks/MendiKontaketa/View
+#: components/utils
+msgid "eginGabe"
+msgstr ""
+
+#. Default: "Eginda"
+#: components/Blocks/MendiKontaketa/View
+#: components/utils
+msgid "eginda"
+msgstr ""
+
+#. Default: "Eginda balio gabe"
+#: components/utils
+msgid "egindaBaliogabe"
+msgstr ""
+
+#. Default: "Egoera"
+#: components/MendiaView/MendiaView
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "egoera"
+msgstr ""
+
+#. Default: "Egoera aldatu"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "egoeraAldatu"
+msgstr ""
+
+#. Default: "Mendi honetara igotzeko asmoa baduzu 'erreserba' bat egin dezakezu. Errserbarekin mendi hori igo nahi duzula eta noiz igo nahi duzun adieraziko duzu. Igo ostean gailurreko argazkiak bidali iezazkiguzu mesedez eta hementxe argitaratuko ditugu."
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbaAzalpena"
+msgstr ""
+
+#. Default: "Erreserba data"
+#: components/MendiaView/MendiaView
+msgid "erreserbaData"
+msgstr ""
+
+#. Default: "Erreserba egin duena"
+#: components/IgoeraView/IgoeraView
+msgid "erreserbaEginDuena"
+msgstr ""
+
+#. Default: "Erreserba eginda"
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbaEginda"
+msgstr ""
+
+#. Default: "Erreserba ezin da egin"
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbaEzinDaEgin"
+msgstr ""
+
+#. Default: "Erreserba ondo gorde da"
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbaOndoGordeDa"
+msgstr ""
+
+#. Default: "Erreserba bat egina duzu jada"
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbaegindajada"
+msgstr ""
+
+#. Default: "Adi: jada eginda duzu mendi honetarako igoera baten erreserba"
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbaegindajadaadi"
+msgstr ""
+
+#. Default: "Erreserbatu"
+#: components/Erreserbatu/Erreserbatu
+msgid "erreserbatu"
+msgstr ""
+
+#. Default: "Erreserbatutako eguna"
+#: components/IgoeraView/IgoeraView
+msgid "erreserbatutakoEguna"
+msgstr ""
+
+#. Default: "Errore bat gertatu da: {error}"
+#: components/Erreserbatu/Erreserbatu
+msgid "erroreBatGertatuDa"
+msgstr ""
+
+#. Default: "Ez naiz joan"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "ezNaizJoan"
+msgstr ""
+
+#. Default: "Ez zara joan?"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "ezzaraJoanGaldera"
+msgstr ""
+
+#. Default: "Azkenean mendi honetara ez bazara joan, esaiguzu mesedez. Nahi baduzu ez joatearen arrazoiak ere esan ditzakezu"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "ezzarajoanAzalpena"
+msgstr ""
+
+#. Default: "Igoera eguna"
+#: components/IgoeraView/IgoeraView
+msgid "igoeraEguna"
+msgstr ""
+
+#. Default: "Igoeraren data eta mendizaleak aldatu"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "igoerarenDatuakAldatu"
+msgstr ""
+
+#. Default: "Ez duzu igoerarik"
+#: components/NireIgoerak/NireIgoerak
+msgid "igoerarikEz"
+msgstr ""
+
+#. Default: "Ikusi"
+#: components/MendiaView/MendiaView
+msgid "ikusi"
+msgstr ""
+
+#. Default: "Ikusi argazkiak"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "ikusiArgazkiak"
+msgstr ""
+
+#. Default: "Irten"
+#: components/LoggedTools/LoggedTools
+msgid "irten"
+msgstr ""
+
+#. Default: "Itxi"
+#: components/Erreserbatu/Erreserbatu
+msgid "itxi"
+msgstr ""
+
+#. Default: "Joan naiz!"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "joanNaiz"
+msgstr ""
+
+#. Default: "Kaixo {fullname}"
+#: components/LoggedTools/LoggedTools
+msgid "kaixo"
+msgstr ""
+
+#. Default: "Mendia"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "mendia"
+msgstr ""
+
+#. Default: "Mendia erreserbatu"
+#: components/Erreserbatu/Erreserbatu
+msgid "mendiaErreserbatu"
+msgstr ""
+
+#. Default: "Mendizalea"
+#: components/IgoeraGridListingItemTemplate/IgoeraGridListingItemTemplate
+#: components/MendiaView/MendiaView
+#: components/NireIgoerak/NireIgoerak
+msgid "mendizalea"
+msgstr ""
+
+#. Default: "Mendizaleak"
+#: components/IgoeraView/IgoeraView
+msgid "mendizaleak"
+msgstr ""
+
+#. Default: "Igo ziren mendizaleak"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "mendizaleakIgoZirenak"
+msgstr ""
+
+#. Default: "Mendizerra"
+#: components/MendiaView/MendiaView
+msgid "mendizerra"
+msgstr ""
+
+#. Default: "Noiz"
+#: components/IgoeraGridListingItemTemplate/IgoeraGridListingItemTemplate
+#: components/MendiaView/MendiaView
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "noiz"
+msgstr ""
+
+#. Default: "Noiz igota"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "noizEginda"
+msgstr ""
+
+#. Default: "Oharrak"
+#: components/IgoeraView/IgoeraView
+#: components/MendiaView/MendiaView
+msgid "oharrak"
+msgstr ""
+
+#. Default: "Proposatutakoak"
+#: components/Blocks/MendiKontaketa/View
+msgid "proposatutakoak"
+msgstr ""
+
+#. Default: "Proposatutakoa"
+#: components/utils
+msgid "propossatutakoa"
+msgstr ""
+
+#. Default: "Proposatutakoa eginda"
+#: components/utils
+msgid "propossatutakoaEginda"
+msgstr ""
+
+#. Default: "sartu"
+#: components/NireIgoerak/NireIgoerak
+msgid "sartu"
+msgstr ""
+
+#. Default: "Zure igoerak ikusteko {sartu} egin behar zara"
+#: components/NireIgoerak/NireIgoerak
+msgid "sartuIgoerakIkusteko"
+msgstr ""
+
+#. Default: "Sektorea"
+#: components/MendiaView/MendiaView
+msgid "sektorea"
+msgstr ""
+
+#. Default: ""
+#: components/Header/Header
+msgid "siteLabel"
+msgstr ""
+
+#. Default: "Utzi"
+#: components/NireIgoerak/IgoerarenXehetasunak
+msgid "utzi"
+msgstr ""
+
+#. Default: "Zain"
+#: components/utils
+msgid "zain"
+msgstr ""
+
+#. Default: "Zure igoerak"
+#: components/NireIgoerak/NireIgoerak
+msgid "zureIgoerak"
+msgstr ""
+
+#. Default: "{count, plural, one {Upload {count} file} other {Upload {count} files}}"
+#: components/ImageUploadModal/ImageUploadModal
+msgid "{count, plural, one {Upload {count} file} other {Upload {count} files}}"
+msgstr ""

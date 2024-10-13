@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <plone:service
+      method="POST"
+      factory=".post.AddIgoeraPost"
+      for="deporeibar.addon.content.mendia.IMendia"
+      permission="deporeibar.addon.add.igoera"
+      name="@add-igoera"
+      />
+
+</configure>

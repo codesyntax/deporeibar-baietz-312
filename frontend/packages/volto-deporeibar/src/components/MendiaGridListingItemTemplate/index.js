@@ -1,0 +1,1 @@
+export { MendiaGridListingItemTemplate } from './MendiaGridListingItemTemplate';

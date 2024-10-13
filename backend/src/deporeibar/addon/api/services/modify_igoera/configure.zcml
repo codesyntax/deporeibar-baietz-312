@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <plone:service
+      method="PATCH"
+      factory=".patch.ModifyIgoeraPatch"
+      for="deporeibar.addon.content.igoera.IIgoera"
+      permission="deporeibar.addon.modify.igoera"
+      name="@modify-igoera"
+      />
+
+</configure>

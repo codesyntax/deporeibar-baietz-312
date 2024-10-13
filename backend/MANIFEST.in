@@ -1,0 +1,34 @@
+include *.acceptance
+include *.in
+include *.md
+include *.txt
+include *.yaml
+include .mrbob.ini
+include Dockerfile
+include Makefile
+include bobtemplate.cfg
+include .dockerignore
+recursive-include docs *.gitkeep
+recursive-include news *.gitkeep
+recursive-include news *.jinja
+recursive-include scripts *.py
+recursive-include src *.1
+recursive-include src *.2
+recursive-include src *.3
+recursive-include src *.4
+recursive-include src *.5
+recursive-include src *.6
+recursive-include src *.7
+recursive-include src *.8
+recursive-include src *.example
+recursive-include src *.gitkeep
+recursive-include src *.jpg
+recursive-include src *.po
+recursive-include src *.pot
+recursive-include src *.pt
+recursive-include src *.robot
+recursive-include src *.rst
+recursive-include src *.sh
+recursive-include src *.xml
+recursive-include src *.zcml
+recursive-include tests *.py

@@ -1,0 +1,70 @@
+{
+  "name": "@plone-collective/volto-authomatic",
+  "version": "2.1.0-beta.0",
+  "description": "Social Login with OAuth2/OpenId for Volto sites.",
+  "author": "Érico Andrei",
+  "license": "MIT",
+  "homepage": "https://github.com/collective/volto-authomatic",
+  "main": "src/index.js",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "social-login",
+    "oauth2",
+    "openid",
+    "react"
+  ],
+  "publishConfig": {
+    "registry": "https://code.codesyntax.com/npm/"
+  },
+  "peerDependencies": {
+    "@plone/volto": ">=13.8.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.22.15",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@plone/scripts": "^3.0.0",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "eslint": "8.49.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-flowtype": "8.0.3",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "postcss-syntax": "^0.36.2",
+    "prettier": "3.0.3",
+    "release-it": "^16.1.5",
+    "stylelint": "15.10.3",
+    "stylelint-config-idiomatic-order": "9.0.0",
+    "stylelint-config-prettier": "9.0.4",
+    "stylelint-prettier": "4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:collective/volto-authomatic.git"
+  },
+  "scripts": {
+    "ci:test-acceptance-server": "make test-acceptance-server",
+    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
+    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
+    "cypress:open": "NODE_ENV=production ../../../node_modules/cypress/bin/cypress open",
+    "cypress:run": "NODE_ENV=test ../../../node_modules/cypress/bin/cypress run",
+    "cypress:start-frontend": "cd ../../../ && RAZZLE_API_PATH=http://localhost:55001/plone yarn start",
+    "dry-release": "release-it --dry-run",
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "prettier:fix": "./node_modules/.bin/prettier --single-quote --write 'src/**/*.{js,jsx,json,css,less,md}'",
+    "prettier": "./node_modules/.bin/prettier --single-quote --check 'src/**/*.{js,jsx,json,css,less,md}'",
+    "release-alpha": "release-it --preRelease=alpha",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release": "release-it",
+    "stylelint:fix": "yarn stylelint --fix && yarn stylelint:overrides --fix",
+    "stylelint:overrides": "./node_modules/.bin/stylelint --syntax less --allow-empty-input 'theme/**/*.overrides' 'src/**/*.overrides'",
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js --allow-empty-input 'src/**/*.{css,less}'"
+  },
+  "packageManager": "yarn@3.2.3"
+}

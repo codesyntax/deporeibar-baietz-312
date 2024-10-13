@@ -1,0 +1,18 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      factory=".altuera_indexer.dummy"
+      name="altuera"
+      />
+
+  <adapter
+      factory=".altuera_indexer.altuera_indexer"
+      name="altuera"
+      />
+
+  <adapter
+      factory=".altuera_indexer.altuera_indexer_int"
+      name="altuera_int"
+      />
+
+</configure>

@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-06-02 06:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../content/igoera.py:82
+msgid "Agendaren bistan agertuko den izena"
+msgstr ""
+
+#: ../content/mendia.py:23
+msgid "Altuera"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:31
+msgid "Bertan behera utzita"
+msgstr ""
+
+#: ../content/mendia.py:59
+msgid "Beste izenak"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:29
+msgid "Egin gabe"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:30
+msgid "Eginda"
+msgstr ""
+
+#: ../content/igoera.py:45
+#: ../content/mendia.py:118
+msgid "Egoera"
+msgstr ""
+
+#: ../content/igoera.py:21
+msgid "Eguna"
+msgstr ""
+
+#: ../content/igoera.py:74
+msgid "Idatzi bat lerro bakoitzean"
+msgstr ""
+
+#: ../profiles/default/types/Igoera.xml
+msgid "Igoera"
+msgstr ""
+
+#: ../content/igoera.py:59
+msgid "Igoera egin zen eguna"
+msgstr ""
+
+#: ../configure.zcml:29
+msgid "Installs the deporeibar.addon add-on."
+msgstr ""
+
+#: ../content/mendia.py:35
+msgid "Latitudea"
+msgstr ""
+
+#: ../content/mendia.py:47
+msgid "Longitudea"
+msgstr ""
+
+#: ../profiles/default/types/Mendia.xml
+msgid "Mendia"
+msgstr ""
+
+#: ../content/igoera.py:71
+msgid "Mendia igo zuten pertsonak"
+msgstr ""
+
+#: ../content/mendia.py:71
+msgid "Mendizerra"
+msgstr ""
+
+#: ../content/mendia.py:106
+msgid "OSM kodea"
+msgstr ""
+
+#: ../content/igoera.py:33
+msgid "Oharrak"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:32
+msgid "Proposatutakoa"
+msgstr ""
+
+#: ../content/mendia.py:83
+msgid "Sektorea"
+msgstr ""
+
+#: ../configure.zcml:38
+msgid "Uninstalls the deporeibar.addon add-on."
+msgstr ""
+
+#: ../content/mendia.py:95
+msgid "Zailtasuna"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:28
+msgid "Zain"
+msgstr ""
+
+#: ../configure.zcml:29
+msgid "deporeibar.addon"
+msgstr ""
+
+#: ../configure.zcml:38
+msgid "deporeibar.addon (uninstall)"
+msgstr ""

@@ -1,0 +1,23 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      factory=".egoera_indexer.dummy"
+      name="egoera_mendia"
+      />
+
+  <adapter
+      factory=".egoera_indexer.dummy"
+      name="egoera_igoera"
+      />
+
+  <adapter
+      factory=".egoera_indexer.egoera_indexer"
+      name="egoera_mendia"
+      />
+
+  <adapter
+      factory=".egoera_indexer.egoera_indexer_igoera"
+      name="egoera_igoera"
+      />
+
+</configure>

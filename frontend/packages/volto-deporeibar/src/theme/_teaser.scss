@@ -1,0 +1,12 @@
+.block.teaser {
+  a h2 {
+    text-decoration: underline;
+    transition:
+      text-underline-offset 400ms,
+      text-decoration-color 400ms;
+  }
+  a:hover h2,
+  a:focus h2 {
+    text-underline-offset: 0.4em;
+  }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_catalog">
+  <column value="mendizerra" />
+  <column value="sektorea" />
+  <column value="altuera" />
+  <column value="zailtasuna" />
+  <column value="egoera" />
+  <column value="erreserbak" />
+  <column value="eguna" />
+  <column value="creators" />
+  <column value="created" />
+
+
+  <index meta_type="FieldIndex"
+         name="mendizerra"
+  >
+    <indexed_attr value="mendizerra" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="sektorea"
+  >
+    <indexed_attr value="sektorea" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="altuera"
+  >
+    <indexed_attr value="altuera" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="zailtasuna"
+  >
+    <indexed_attr value="zailtasuna" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="egoera_igoera"
+  >
+    <indexed_attr value="egoera_igoera" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="egoera_mendia"
+  >
+    <indexed_attr value="egoera_mendia" />
+  </index>
+
+</object>

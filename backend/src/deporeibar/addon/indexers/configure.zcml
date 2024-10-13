@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="deporeibar.addon"
+    >
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <include file="egoera_indexer.zcml" />
+
+  <include file="zailtasuna_indexer.zcml" />
+
+  <include file="altuera_indexer.zcml" />
+
+
+</configure>

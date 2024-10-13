@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rolemap>
+  <permissions>
+    <!-- -*- extra stuff goes here -*- -->
+
+    <permission acquire="True"
+                name="deporeibar.addon: Add Igoera"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+
+    <permission acquire="True"
+                name="deporeibar.addon: Add Mendia"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+
+    <permission acquire="True"
+                name="deporeibar.addon.add.igoera"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+      <role name="Authenticated" />
+    </permission>
+
+    <permission acquire="True"
+                name="deporeibar.addon.modify.igoera"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+  </permissions>
+</rolemap>

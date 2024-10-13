@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"POT-Creation-Date: 2024-04-21T15:22:08.717Z\n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: volto\n"
+
+#. Default: "2-digit"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "2-digit"
+msgstr ""
+
+#. Default: "Calendar Settings"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Calendar Settings"
+msgstr ""
+
+#. Default: "Calendar URL"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Calendar URL"
+msgstr ""
+
+#. Default: "Day"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Day"
+msgstr ""
+
+#. Default: "Calendar"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "FullCalendar"
+msgstr ""
+
+#. Default: "If not set, current date is used."
+#: components/manage/Blocks/FullCalendar/messages
+msgid "If not set, current date is used."
+msgstr ""
+
+#. Default: "Initial date"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial date"
+msgstr ""
+
+#. Default: "Initial view"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial view"
+msgstr ""
+
+#. Default: "List day"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List day"
+msgstr ""
+
+#. Default: "List month"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List month"
+msgstr ""
+
+#. Default: "List week"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List week"
+msgstr ""
+
+#. Default: "Long"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Long"
+msgstr ""
+
+#. Default: "Month"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Month"
+msgstr ""
+
+#. Default: "Must point to an iCal/ics file."
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Must point to an iCal/ics file."
+msgstr ""
+
+#. Default: "Next"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Next"
+msgstr ""
+
+#. Default: "Numeric"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Numeric"
+msgstr ""
+
+#. Default: "Previous"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Previous"
+msgstr ""
+
+#. Default: "Short"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Short"
+msgstr ""
+
+#. Default: "Title"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title"
+msgstr ""
+
+#. Default: "Title: Day format"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Day format"
+msgstr ""
+
+#. Default: "Title: Month format"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Month format"
+msgstr ""
+
+#. Default: "Title: Year format"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Year format"
+msgstr ""
+
+#. Default: "Today"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Today"
+msgstr ""
+
+#. Default: "Toolbar center"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar center"
+msgstr ""
+
+#. Default: "Toolbar left"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar left"
+msgstr ""
+
+#. Default: "Toolbar right"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar right"
+msgstr ""
+
+#. Default: "Week"
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Week"
+msgstr ""

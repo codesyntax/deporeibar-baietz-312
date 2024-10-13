@@ -1,0 +1,246 @@
+@import 'fonts';
+@import 'albisteak';
+@import 'teaser';
+
+.hello-fullname {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.navigation {
+  flex: none;
+  align-self: end;
+  padding-right: 2rem;
+
+  .item {
+    &.active,
+    &:hover {
+      //bottom: -25px;
+      border-bottom: 9px solid $depor-color;
+    }
+  }
+}
+
+.header-wrapper .header .logo-nav-wrapper {
+  padding-bottom: 2px;
+}
+
+.breadcrumbs {
+  display: none;
+}
+
+h1.documentFirstHeading {
+  text-align: center;
+}
+
+@media only screen and (min-width: $largest-mobile-screen) {
+  .section-mendiak {
+    .card-container {
+      display: flex;
+
+      .mendia-details {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  #page-document .block.search.grid .card-container > img {
+    width: 50% !important;
+  }
+}
+
+p {
+  line-height: 160%;
+}
+
+.blocks-group-wrapper > .block.teaser .content p {
+  line-height: 160%;
+}
+
+.tools,
+.content-area {
+  a,
+  body,
+  li,
+  p {
+    font-family: var(--custom-main-font, 'Montserrat', sans-serif);
+    font-weight: 500 !important;
+  }
+}
+
+@mixin button($color: $black) {
+  padding: 8px 20px;
+  border: 1px solid $color;
+  border-radius: unset;
+  background: none;
+  color: $color;
+}
+
+@mixin button_focus_hover() {
+  background-color: $black;
+  color: $white;
+}
+
+.block.form {
+  button.ui.primary.button {
+    @include button();
+    @include body-text-bold();
+  }
+  button.ui.primary.button:focus,
+  button.ui.primary.button:hover {
+    @include button_focus_hover();
+  }
+}
+
+.content {
+  a.ui.button,
+  button.ui.button {
+    @include button();
+    @include body-text-bold();
+  }
+  a.ui.button:focus,
+  a.ui.button:hover,
+  button.ui.button:focus,
+  button.ui.button:hover {
+    @include button_focus_hover();
+  }
+
+  button.ui.label {
+    font-size: 18px;
+
+    .green {
+      @include button('#51AA55');
+    }
+    .violet {
+      @include button('#6435C9');
+    }
+    .teal {
+      @include button('#517776');
+    }
+  }
+}
+
+.item-mendia-igoera > .content ul.mendia-details li,
+.item-mendia-igoera > .content ul.igoera-details li {
+  display: inline;
+  padding-left: 10px;
+}
+
+.item-mendia-igoera > .content p.igoera-details-oharrak {
+  padding-bottom: 30px;
+  padding-left: 50px;
+}
+
+.item-mendia .content h2 a {
+  display: inline-block;
+  @include text-heading-h2();
+}
+
+.item-mendia-igoera .content h2 a {
+  display: inline-block;
+  text-align: center;
+  @include text-heading-h2();
+}
+
+.customgrid {
+  @extend .grid;
+}
+
+.content-area a,
+.content-area p > a,
+.content-area li > a {
+  color: $depor-color !important;
+}
+
+.block.form > .public-ui {
+  @include narrow-container-width();
+  border: 0;
+
+  .ui.padded.segment {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .description {
+    @include introduction();
+  }
+
+  label {
+    @include body-text();
+  }
+}
+
+.counters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .counter {
+    margin: 0 10px;
+  }
+
+  .counter .ui {
+    border: 5px solid $depor-color;
+    border-radius: 50%;
+
+    .counter-wrapper {
+      display: flex;
+      width: 200px;
+      height: 200px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .counter .ui span {
+    @include text-heading-h2();
+  }
+}
+
+.content-area ul {
+  list-style-type: none;
+}
+
+.table-of-contents.default {
+  /*
+  position: sticky;
+  top: 20px;
+  */
+  text-align: center;
+
+  li:before {
+    content: '';
+  }
+  ul.ui.list li {
+    display: inline-block;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  ul.ui.list li > a {
+    @include button();
+    color: $black !important;
+    text-decoration: none;
+  }
+  ul.ui.list li > a:hover,
+  ul.ui.list li > a:focus {
+    @include button_focus_hover();
+    color: $white !important;
+    text-decoration: none;
+  }
+
+  /*
+  li a {
+    color: $black;
+  }
+  li a:hover,
+  li a:focus {
+    background-color: $black;
+    color: $white;
+  }
+  li {
+    list-style-type: none;
+  }
+  */
+}
