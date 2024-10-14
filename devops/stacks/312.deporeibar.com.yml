@@ -67,8 +67,8 @@ services:
       - nw-internal
 
   frontend:
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:${STACK_PARAM:-latest}
-  
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:${STACK_PARAM:latest}
+
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
       RAZZLE_API_PATH: https://312.deporeibar.com
@@ -97,8 +97,8 @@ services:
         - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:${STACK_PARAM:-latest}
-  
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:${STACK_PARAM:latest}
+
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'"
     depends_on:
@@ -166,7 +166,7 @@ volumes:
   vol-site-data:
     driver_opts:
       type: none
-      device: "${DEPLOY_FOLDER:/srv/deporeibar-baietz-312/data}"
+      device: ${DEPLOY_FOLDER:/srv/deporeibar-baietz-312/data}
       o: bind
 
 networks:
