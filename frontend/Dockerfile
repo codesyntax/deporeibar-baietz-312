@@ -3,6 +3,8 @@ ARG VOLTO_VERSION
 FROM plone/frontend-builder:${VOLTO_VERSION} as builder
 
 COPY --chown=node packages/volto-deporeibar /app/packages/volto-deporeibar
+COPY --chown=node packages/volto-authomatic /app/packages/volto-authomatic
+COPY --chown=node packages/volto-fullcalendar-block /app/packages/volto-fullcalendar-block
 COPY --chown=node volto.config.js /app/
 COPY --chown=node package.json /app/package.json.temp
 
