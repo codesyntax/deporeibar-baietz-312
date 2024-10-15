@@ -35,7 +35,7 @@ app = makerequest(globals()["app"])
 
 request = app.REQUEST
 
-ifaces = [IBrowserLayer] + list(directlyProvidedBy(request))
+ifaces = [IDeporeibarAddonLayer] + list(directlyProvidedBy(request))
 
 directlyProvides(request, *ifaces)
 
