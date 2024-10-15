@@ -65,6 +65,6 @@ if site_id not in app.objectIds():
     transaction.commit()
     if EXAMPLE_CONTENT:
         portal_setup: SetupTool = site.portal_setup
-        portal_setup.runAllImportStepsFromProfile("deporeibar.addon:initial")
+        portal_setup.runAllImportStepsFromProfile("deporeibar.addon:default")
         transaction.commit()
     app._p_jar.sync()
