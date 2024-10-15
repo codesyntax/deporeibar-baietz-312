@@ -101,6 +101,22 @@ stack-stop: ## stop stacks: $(STACK_NAME)
 	@echo "$(GREEN)==> Stack $(STACK_NAME): stop to context $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CMD_CONTEXT} stack rm $(STACK_NAME)
 
+.PHONY: stack-rm
+stack-rm: ## rm stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): rm to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack rm $(STACK_NAME)
+
+.PHONY: stack-ps
+stack-ps: ## ps stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): ps to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack ps $(STACK_NAME)
+
+.PHONY: stack-ls
+stack-ls: ## ls stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): ls to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack ls
+
+
 
 .PHONY: stack-create-site
 stack-create-site: ## Create a new site stacks: $(STACK_NAME)
