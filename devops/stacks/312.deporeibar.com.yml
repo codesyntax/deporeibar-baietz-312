@@ -97,7 +97,7 @@ version: '3.8'
 volumes:
   vol-site-data:
     driver_opts:
-      device: ${DEPLOY_FOLDER:/srv/deporeibar-baietz-312/data}
+      device: /home/csmant/data
       o: bind
       type: none
   vol-traefik-certs: {}
