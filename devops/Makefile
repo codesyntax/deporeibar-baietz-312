@@ -33,6 +33,7 @@ else
 $(error DEPLOY_ENV is not supported)
 endif
 
+
 DOCKER=docker
 DOCKER_CMD_CONTEXT=${DOCKER} --context ${CONTEXT}
 
@@ -86,12 +87,36 @@ docker-info: ## Docker: Information about remote docker context
 .PHONY: server-setup
 server-setup: bin/ansible ## Server: Configure a remote server
 	@echo "$(GREEN)==> Server: Configure a remote server with Ansible$(RESET)"
+	@echo $(CONTEXT_HOST)
+	@echo $(CONTEXT)
 	./bin/ansible-playbook playbooks/setup.yml --limit ${CONTEXT}
 
 .PHONY: stack-deploy
 stack-deploy: ## Deploy stacks: $(STACK_NAME)
 	@echo "$(GREEN)==> Stack $(STACK_NAME): Deploy to context $(DEPLOY_ENV) $(RESET)"
-	${DOCKER_CMD_CONTEXT} stack deploy --with-registry-auth -c stacks/312.deporeibar.com.yml $(STACK_NAME)
+	${DOCKER_CMD_CONTEXT} stack deploy --with-registry-auth -c stacks/test.312.deporeibar.com.yml $(STACK_NAME)
+
+.PHONY: stack-stop
+stack-stop: ## stop stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): stop to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack rm $(STACK_NAME)
+
+.PHONY: stack-rm
+stack-rm: ## rm stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): rm to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack rm $(STACK_NAME)
+
+.PHONY: stack-ps
+stack-ps: ## ps stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): ps to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack ps $(STACK_NAME)
+
+.PHONY: stack-ls
+stack-ls: ## ls stacks: $(STACK_NAME)
+	@echo "$(GREEN)==> Stack $(STACK_NAME): ls to context $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CMD_CONTEXT} stack ls
+
+
 
 .PHONY: stack-create-site
 stack-create-site: ## Create a new site stacks: $(STACK_NAME)

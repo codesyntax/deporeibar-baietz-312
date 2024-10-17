@@ -18,7 +18,6 @@
     - name: "Base Python: Setup"
       ansible.builtin.import_tasks: ../tasks/base/task_base_python.yml
 
-
   roles:
     - role: geerlingguy.swap
 
@@ -132,6 +131,25 @@
             group: "{{ item.group }}"
             mode: "{{ item.mode }}"
           with_items: "{{ project_folders }}"
+
+
+    - name: "Set env vars"
+      tags:
+        - base
+        - project
+
+      ansible.builtin.lineinfile:
+        destfile: '/home/{{users.default.name}}/.bashrc'
+        state: present
+        line: "{{ item }}"
+      loop:
+        - 'export DEPLOY_ENV={{ lookup("env", "DEPLOY_ENV", default="") }}'
+        - 'export DEPLOY_HOST={{ lookup("env", "DEPLOY_HOST", default="") }}'
+        - 'export DEPLOY_PORT={{ lookup("env", "DEPLOY_PORT", default="") }}'
+        - 'export DEPLOY_USER={{ lookup("env", "DEPLOY_USER", default="") }}'
+        - 'export DEPLOY_FOLDER={{ lookup("env", "DEPLOY_FOLDER", default="") }}'
+        - 'export DOCKER_CONFIG={{ lookup("env", "DOCKER_CONFIG", default="") }}'
+        - 'export STACK_NAME={{ lookup("env", "STACK_NAME", default="") }}'
 
   handlers:
     - name: "Include default handlers"

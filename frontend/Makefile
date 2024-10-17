@@ -24,7 +24,7 @@ DOCKER_IMAGE=plone/server-dev:${PLONE_VERSION}
 DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
 
 ADDON_NAME='volto-deporeibar'
-IMAGE_NAME=registry.gitlab.com/codesyntax/deporeibar-baietz-312-frontend
+IMAGE_NAME=registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend
 IMAGE_TAG=latest
 VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 
