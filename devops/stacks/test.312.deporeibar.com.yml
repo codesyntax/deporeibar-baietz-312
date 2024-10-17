@@ -36,7 +36,7 @@ services:
     environment:
       RELSTORAGE_DSN: dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
         password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:4
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:6
     networks:
     - nw-internal
     ports:
@@ -79,7 +79,7 @@ services:
     environment:
       RAZZLE_API_PATH: https://test.312.deporeibar.com
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:4
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:6
     networks:
     - nw-internal
   traefik:

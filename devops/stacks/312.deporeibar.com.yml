@@ -1,3 +1,7 @@
+networks:
+  nw-internal:
+    driver: overlay
+    internal: true
 services:
   backend:
     depends_on:
@@ -23,19 +27,31 @@ services:
       - traefik.http.routers.rt-backend-classic.tls=true
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
+      replicas: 2
+      update_config:
+        delay: 5s
+        order: start-first
+        parallelism: 1
     environment:
       RELSTORAGE_DSN: dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
         password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1
-    ports:
-    - 8080:8080
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:6
+    networks:
+    - nw-internal
   db:
-    deploy: {}
+    deploy:
+      replicas: 1
+      update_config:
+        delay: 1s
+        order: stop-first
+        parallelism: 1
     environment:
       POSTGRES_DB: plone
       POSTGRES_PASSWORD: CTBolRnPQVoh
       POSTGRES_USER: plone
     image: postgres:14
+    networks:
+    - nw-internal
     volumes:
     - vol-site-data:/var/lib/postgresql/data
   frontend:
@@ -52,10 +68,17 @@ services:
       - traefik.http.routers.rt-frontend.tls.certresolver=le
       - traefik.http.routers.rt-frontend.service=svc-frontend
       - traefik.http.routers.rt-frontend.middlewares=gzip
+      replicas: 2
+      update_config:
+        delay: 5s
+        order: start-first
+        parallelism: 1
     environment:
       RAZZLE_API_PATH: https://312.deporeibar.com
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:6
+    networks:
+    - nw-internal
   traefik:
     command:
     - --providers.docker
@@ -86,7 +109,14 @@ services:
       - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`{host:.*}`)
       - traefik.http.routers.generic-https-redirect.priority=1
       - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
+      replicas: 1
+      update_config:
+        delay: 5s
+        order: start-first
+        parallelism: 1
     image: traefik:v2.10
+    networks:
+    - nw-internal
     ports:
     - 80:80
     - 443:443
@@ -97,7 +127,7 @@ version: '3.8'
 volumes:
   vol-site-data:
     driver_opts:
-      device: /home/csmant/data
+      device: ${DEPLOY_FOLDER:-/srv/deporeibar-baietz-312/data}
       o: bind
       type: none
   vol-traefik-certs: {}
