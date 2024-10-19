@@ -2,10 +2,9 @@ services:
   backend:
     depends_on:
     - db
-    deploy:
-      labels:
+    labels:
       - traefik.enable=true
-      - traefik.constraint-label=public
+      #- traefik.constraint-label=public
       - traefik.http.services.svc-backend.loadbalancer.server.port=8080
       - traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.regex=^/\+\+api\+\+($$|/.*)
       - traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/https/test.312.deporeibar.com/Plone/++api++/VirtualHostRoot$$1
@@ -17,16 +16,14 @@ services:
       - traefik.http.routers.rt-backend-api.tls=true
       - traefik.http.routers.rt-backend-api.service=svc-backend
       - traefik.http.routers.rt-backend-api.middlewares=gzip,mw-backend-vhm-api
-      - traefik.http.routers.rt-backend-classic.rule=Host(`test.312.deporeibar.com`) &&
-        PathPrefix(`/ClassicUI`)
+      - traefik.http.routers.rt-backend-classic.rule=Host(`test.312.deporeibar.com`) && PathPrefix(`/ClassicUI`)
       - traefik.http.routers.rt-backend-classic.entrypoints=https
       - traefik.http.routers.rt-backend-classic.tls=true
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
     environment:
-      RELSTORAGE_DSN: dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
-        password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1
+      RELSTORAGE_DSN: dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1.0.11
     ports:
     - 8080:8080
   db:
@@ -41,10 +38,9 @@ services:
   frontend:
     depends_on:
     - backend
-    deploy:
-      labels:
+    labels:
       - traefik.enable=true
-      - traefik.constraint-label=public
+#      - traefik.constraint-label=public
       - traefik.http.services.svc-frontend.loadbalancer.server.port=3000
       - traefik.http.routers.rt-frontend.rule=Host(`test.312.deporeibar.com`)
       - traefik.http.routers.rt-frontend.entrypoints=https
@@ -55,38 +51,42 @@ services:
     environment:
       RAZZLE_API_PATH: https://test.312.deporeibar.com
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1
+    ports:
+    - 3000:3000
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1.0.11
   traefik:
     command:
-    - --providers.docker
-    - --providers.docker.constraints=Label(`traefik.constraint-label`, `public`)
-    - --providers.docker.exposedbydefault=false
-    - --providers.docker.swarmmode
-    - --providers.docker.network=312-deporeibar-com_nw-internal
-    - --entrypoints.http.address=:80
-    - --entrypoints.https.address=:443
-    - --certificatesresolvers.le.acme.email=certs@codesyntax.com
-    - --certificatesresolvers.le.acme.storage=/certificates/acme.json
-    - --certificatesresolvers.le.acme.tlschallenge=true
-    - --accesslog
-    - --log
-    - --log.level=INFO
-    - --api
-    deploy:
-      labels:
+    - "--providers.docker=true"
+    #- "--providers.docker.constraints=Label(`traefik.constraint-label`, `public`)"
+    - "--providers.docker.exposedbydefault=false"
+    - "--entrypoints.http.address=:80"
+    - "--entrypoints.https.address=:443"
+    - "--certificatesresolvers.le.acme.email=certs@codesyntax.com"
+    - "--certificatesresolvers.le.acme.storage=/certificates/acme.json"
+    - "--certificatesresolvers.le.acme.tlschallenge=true"
+    - "--accesslog"
+    - "--log"
+    - "--log.level=INFO"
+    - "--api"
+    labels:
       - traefik.enable=true
-      - traefik.constraint-label=public
+#      - traefik.constraint-label=public
       - traefik.http.services.traefik-public.loadbalancer.server.port=8000
       - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
       - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
       - traefik.http.middlewares.gzip.compress=true
-      - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png, image/jpeg,
-        font/woff2
+      - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png, image/jpeg, font/woff2
       - traefik.http.routers.generic-https-redirect.entrypoints=http
       - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`{host:.*}`)
       - traefik.http.routers.generic-https-redirect.priority=1
       - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
-    image: traefik:v2.10
+      - traefik.http.middlewares.admin-auth.basicauth.users=admin:$$apr1$$uZPT5Fgu$$AmlIdamxT5ipBvPlsdfD70
+      - traefik.http.routers.traefik-public-https.rule=Host(`test.312.deporeibar.com`) && PathPrefix(`/traefik`)
+      - traefik.http.routers.traefik-public-https.entrypoints=https
+      - traefik.http.routers.traefik-public-https.tls=true
+      - traefik.http.routers.traefik-public-https.service=api@internal
+      - traefik.http.routers.traefik-public-https.middlewares=admin-auth
+    image: traefik:v3.1.0
     ports:
     - 80:80
     - 443:443
