@@ -1,14 +1,29 @@
-test.312.deporeibar.com
+:443 {
+    # Enable automatic HTTPS
+    # If you want HTTP only, remove ":80" and use ":443" instead
 
+    # Set the domain name if needed (e.g., "example.com")
+    test.312.deporeibar.com
 
-# Compress responses according to Accept-Encoding headers
-encode gzip zstd
+    # Set the backend server URL
+    reverse_proxy * http://nginx:80 {
+        # Optional: set the health check endpoint to ensure backend is available
+        health_uri /ok
+        health_interval 10s
+        health_timeout 5s
+    }
 
-# Make HTML file extension optional
-try_files {path}.html {path}
+    # Logging (optional)
+    log {
+        output stdout
+        format json
+    }
 
-# Send API requests to backend
-reverse_proxy / nginx
+    # Optional: additional header modifications
+    header_up X-Forwarded-Proto {http.request.scheme}
+    header_up Host {http.request.host}
 
-# Serve everything else from the file system
-file_server
+    # Caching settings (optional, if needed)
+    # Uncomment if caching is required:
+    # encode zstd gzip
+}
