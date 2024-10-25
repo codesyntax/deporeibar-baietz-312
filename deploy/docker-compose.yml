@@ -58,16 +58,16 @@ services:
   #     - vol-certbot-certs:/etc/letsencrypt
   #     - vol-certbot-www:/var/www/certbot
 
-  # caddy:
-  #   image: caddy
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #     - "443:443/udp"
-  #   volumes:
-  #     - ./conf/Caddyfile:/etc/caddy/Caddyfile
-  #     - caddy_data:/data
-  #     - caddy_config:/config
+  caddy:
+    image: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./conf/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
 
 version: "3.8"
 volumes:
