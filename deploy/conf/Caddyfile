@@ -14,8 +14,6 @@ test.312.deporeibar.com:443 {
        # Optional: additional header modifications
         header_up X-Forwarded-Proto {http.request.scheme}
         header_up Host {http.request.host}
-
-
     }
 
     # Logging (optional)
@@ -27,4 +25,5 @@ test.312.deporeibar.com:443 {
     # Caching settings (optional, if needed)
     # Uncomment if caching is required:
     # encode zstd gzip
+    tls certs@codesyntax.com
 }
