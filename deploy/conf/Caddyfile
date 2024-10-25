@@ -1,0 +1,14 @@
+test.312.deporeibar.com
+
+
+# Compress responses according to Accept-Encoding headers
+encode gzip zstd
+
+# Make HTML file extension optional
+try_files {path}.html {path}
+
+# Send API requests to backend
+reverse_proxy / nginx
+
+# Serve everything else from the file system
+file_server
