@@ -1,16 +1,21 @@
-:443 {
+test.312.deporeibar.com:443 {
     # Enable automatic HTTPS
     # If you want HTTP only, remove ":80" and use ":443" instead
 
     # Set the domain name if needed (e.g., "example.com")
-    test.312.deporeibar.com
 
     # Set the backend server URL
     reverse_proxy * http://nginx:80 {
         # Optional: set the health check endpoint to ensure backend is available
-        health_uri /ok
-        health_interval 10s
-        health_timeout 5s
+        #health_uri /ok
+        #health_interval 10s
+        #health_timeout 5s
+
+       # Optional: additional header modifications
+        header_up X-Forwarded-Proto {http.request.scheme}
+        header_up Host {http.request.host}
+
+
     }
 
     # Logging (optional)
@@ -18,10 +23,6 @@
         output stdout
         format json
     }
-
-    # Optional: additional header modifications
-    header_up X-Forwarded-Proto {http.request.scheme}
-    header_up Host {http.request.host}
 
     # Caching settings (optional, if needed)
     # Uncomment if caching is required:
