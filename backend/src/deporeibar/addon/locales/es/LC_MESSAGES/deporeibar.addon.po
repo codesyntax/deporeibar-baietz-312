@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-02 06:55+0000\n"
+"POT-Creation-Date: 2024-10-27 06:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../content/igoera.py:82
+#: ../scripts/warning_5_days.pt:44
+msgid "<p>Kaixo,</p> <p> Gure datuen arabera Baietz 312 mendi! proiektuan <strong>${DYNAMIC_CONTENT}</strong> mendia igotzeko erreserba egin zenuen egun honetarako: <strong>${DYNAMIC_CONTENT}</strong>. </p> <p> Jada egun batzuk pasatu dira egun horretatik eta oraindik ez dugu zure igoeraren berri, hori dela-eta gure webgunera sartu <a href=\"https://312.deporeibar.com\">\"Nire Igoerak\"</a> atalera joan eta igoeraren berri ematea eskatzen dizugu. Berdin da mendia egin duzun ala ez, baina mesedez esaiguzu, batez ere joan ez bazara. Horrela mendi hori \"askatu\" egin dezakezu eta beste pertsona batek egin dezan utzi. </p> <p> Jakin ezazu, zuk erreserbatu zenuen egunetik 10 egun pasatu badira eta zure berri ez badugu, mendi hori automatikoki askatuko dugula. Badakizu nahiz eta mendi hori \"askatu\", beste egun baterako erreserbatu dezakezula. </p> <p>Eskerrik asko proiektuan parte hartzeagatik</p> <br /> <p>Hola,</p> <p> Seg&uacute;n nuestros datos reservaste el monte <strong>${DYNAMIC_CONTENT}</strong> para el d&iacute;a <strong>${DYNAMIC_CONTENT}</strong> dentro del proyecto de subir 312 montes. </p> <p> Ya han pasado unos d&iacute;as desde esa fecha y como no tenemos noticias te pedimos que <a href=\"https://312.deporeibar.com\">accedas a la web</a> y nos indiques si lo has subido o no, para que, si no lo has hecho, el monte pueda ser \"liberado\" para que lo pueda subir otro. </p> <p> Recuerda que una vez transcurridos 10 d&iacute;as desde la fecha para la que reservaste el monte y si no nos has dicho nada, el monte se liberar&aacute; autom&aacute;ticamente. Ya sabes que aunque no hayas ido al monte, puedes liberarlo y volver a reservarlo para otra fecha. </p> <p>Gracias por participar en el proyecto</p>"
+msgstr ""
+
+#: ../scripts/action_10_days.pt:38
+msgid "<p>Kaixo,</p> <p> Gure datuen arabera Baietz 312 mendi! proiektuan <strong>${DYNAMIC_CONTENT}</strong> mendia igotzeko erreserba egin zenuen egun honetarako: <strong>${DYNAMIC_CONTENT}</strong>. </p> <p> Jada hamar egun pasatu dira egun horretatik eta oraindik ez dugu zure igoeraren berri, hori dela-eta zure igoera \"bertan behera\" utzi dugu. </p> <p> Jakin ezazu nahiz eta mendi hori \"askatu\", beste egun baterako erreserbatu dezakezula. </p> <p>Eskerrik asko proiektuan parte hartzeagatik</p> <br /> <p>Hola,</p> <p> Seg&uacute;n nuestros datos reservaste el monte <strong>${DYNAMIC_CONTENT}</strong> para el d&iacute;a <strong>${DYNAMIC_CONTENT}</strong> dentro del proyecto de subir 312 montes. </p> <p> Ya han pasado 10 d&iacute;as desde esa fecha y como no tenemos noticias hemos liberado ese monte autom&aacute;ticamente. </p> <p> Recuerda aunque no hayas ido al monte, puedes volver a reservarlo para otra fecha. </p> <p>Gracias por participar en el proyecto</p>"
+msgstr ""
+
+#: ../content/igoera.py:83
 msgid "Agendaren bistan agertuko den izena"
 msgstr "Nombre que saldrá en la vista de agenda"
 
@@ -22,7 +30,19 @@ msgstr "Nombre que saldrá en la vista de agenda"
 msgid "Altuera"
 msgstr "Altitud"
 
-#: ../vocabularies/egoera_igoera_vocabulary.py:31
+#: ../profiles.zcml:22
+msgid "Baietz 312: Example content"
+msgstr ""
+
+#: ../profiles.zcml:13
+msgid "Baietz 312: Install"
+msgstr ""
+
+#: ../profiles.zcml:30
+msgid "Baietz 312: Uninstall"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:27
 msgid "Bertan behera utzita"
 msgstr "No realizada"
 
@@ -30,24 +50,32 @@ msgstr "No realizada"
 msgid "Beste izenak"
 msgstr "Otros nombres"
 
-#: ../vocabularies/egoera_igoera_vocabulary.py:29
+#: ../profiles.zcml:22
+msgid "Create example content to showcase the new website"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:24
 msgid "Egin gabe"
 msgstr "Sin hacer"
 
-#: ../vocabularies/egoera_igoera_vocabulary.py:30
+#: ../vocabularies/egoera_igoera_vocabulary.py:26
 msgid "Eginda"
 msgstr "Hecho"
 
-#: ../content/igoera.py:45
+#: ../vocabularies/egoera_igoera_vocabulary.py:25
+msgid "Eginda balio gabe"
+msgstr ""
+
+#: ../content/igoera.py:46
 #: ../content/mendia.py:118
 msgid "Egoera"
 msgstr "Estado"
 
-#: ../content/igoera.py:21
+#: ../content/igoera.py:22
 msgid "Eguna"
 msgstr "Día"
 
-#: ../content/igoera.py:74
+#: ../content/igoera.py:75
 msgid "Idatzi bat lerro bakoitzean"
 msgstr "Un nombre en cada línea"
 
@@ -55,7 +83,7 @@ msgstr "Un nombre en cada línea"
 msgid "Igoera"
 msgstr "Ascensión"
 
-#: ../content/igoera.py:59
+#: ../content/igoera.py:60
 msgid "Igoera egin zen eguna"
 msgstr "Día"
 
@@ -75,7 +103,7 @@ msgstr "Longitud"
 msgid "Mendia"
 msgstr "Montaña"
 
-#: ../content/igoera.py:71
+#: ../content/igoera.py:72
 msgid "Mendia igo zuten pertsonak"
 msgstr "Personas que subieron"
 
@@ -87,17 +115,29 @@ msgstr "Sierra"
 msgid "OSM kodea"
 msgstr "Código OSM"
 
-#: ../content/igoera.py:33
+#: ../content/igoera.py:34
 msgid "Oharrak"
 msgstr "Notas"
 
-#: ../vocabularies/egoera_igoera_vocabulary.py:32
+#: ../profiles.zcml:13
+msgid "Package to configure a new Baietz 312 site"
+msgstr ""
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:28
 msgid "Proposatutakoa"
 msgstr "Propuesta"
+
+#: ../vocabularies/egoera_igoera_vocabulary.py:29
+msgid "Proposatutakoa eginda"
+msgstr ""
 
 #: ../content/mendia.py:83
 msgid "Sektorea"
 msgstr "Sector"
+
+#: ../profiles.zcml:30
+msgid "Uninstall Baietz 312 setup."
+msgstr ""
 
 #: ../configure.zcml:38
 msgid "Uninstalls the deporeibar.addon add-on."
@@ -107,7 +147,7 @@ msgstr ""
 msgid "Zailtasuna"
 msgstr "Dificultad"
 
-#: ../vocabularies/egoera_igoera_vocabulary.py:28
+#: ../vocabularies/egoera_igoera_vocabulary.py:23
 msgid "Zain"
 msgstr "A la espera"
 
