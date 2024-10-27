@@ -1,5 +1,7 @@
 
 
+## [1.0.20](https://gitlab.com/codesyntax/deporeibar-baietz-312/compare/1.0.19...1.0.20) (2024-10-27)
+
 ## [1.0.19](https://gitlab.com/codesyntax/deporeibar-baietz-312/compare/1.0.17...1.0.19) (2024-10-27)
 
 ## [1.0.17](https://gitlab.com/codesyntax/deporeibar-baietz-312/compare/1.0.16...1.0.17) (2024-10-27)
