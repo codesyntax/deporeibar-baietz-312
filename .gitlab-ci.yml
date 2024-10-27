@@ -111,7 +111,7 @@ bump-version:
   stage: bump
   before_script:
     # install basic packages
-    - apk add --no-cache make bash python3 ncurses openssh-client-common git
+    - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
     # Git dance
     - eval `ssh-agent -s`
     - echo "${VOLTO_DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
