@@ -1,20 +1,29 @@
 services:
   backend:
     depends_on:
-      - db
+    - db
     environment:
-      RELSTORAGE_DSN:
-        dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
+      RELSTORAGE_DSN: dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
         password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1.0.11
-    ports:
-      - 8080:8080
     healthcheck:
-      test: curl --fail http://localhost:8080/Plone/ok || exit 1
       interval: 40s
-      timeout: 30s
       retries: 3
       start_period: 60s
+      test: curl --fail http://localhost:8080/Plone/ok || exit 1
+      timeout: 30s
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1.0.16
+    ports:
+    - 8080:8080
+  caddy:
+    image: caddy
+    ports:
+    - 80:80
+    - 443:443
+    - 443:443/udp
+    volumes:
+    - ./conf/Caddyfile:/etc/caddy/Caddyfile
+    - caddy_data:/data
+    - caddy_config:/config
   db:
     deploy: {}
     environment:
@@ -23,70 +32,46 @@ services:
       POSTGRES_USER: plone
     image: postgres:14
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+    - ./data/db:/var/lib/postgresql/data
   frontend:
     depends_on:
-      - backend
+    - backend
     environment:
       RAZZLE_API_PATH: https://test.312.deporeibar.com
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1.0.11
     healthcheck:
-      test: curl --fail http://localhost:3000/Plone/ok || exit 1
       interval: 40s
-      timeout: 30s
       retries: 3
       start_period: 60s
-
+      test: curl --fail http://localhost:3000/Plone/ok || exit 1
+      timeout: 30s
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1.0.16
   nginx:
     depends_on:
-      - backend
-      - frontend
+    - backend
+    - frontend
+    environment:
+      SERVER_DOMAIN: test.312.deporeibar.com
     image: nginx
     volumes:
-      #- ./conf/nginx.conf.template:/etc/nginx/nginx.conf
-      - ./conf/default.conf.template:/etc/nginx/templates/default.conf.template
-      - ./conf/dhparam.pem:/etc/nginx/ssl/dhparam.pem
-    environment:
-      SERVER_DOMAIN: "test.312.deporeibar.com"
-
-  # certbot:
-  #   image: certbot/certbot:v2.6.0
-  #   container_name: ulmacatalog_certbot
-  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-  #   volumes:
-  #     - vol-certbot-certs:/etc/letsencrypt
-  #     - vol-certbot-www:/var/www/certbot
-
-  caddy:
-    image: caddy
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
-    volumes:
-      - ./conf/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-
-version: "3.8"
+    - ./conf/default.conf.template:/etc/nginx/templates/default.conf.template
+    - ./conf/dhparam.pem:/etc/nginx/ssl/dhparam.pem
+version: '3.8'
 volumes:
-  vol-site-data:
-    driver_opts:
-      device: "./data/db/"
-      o: bind
-      type: none
+  caddy_config: null
+  caddy_data: null
   vol-certbot-certs:
     driver_opts:
-      device: "./data/certbot/conf/"
+      device: ./data/certbot/conf/
       o: bind
       type: none
-
   vol-certbot-www:
     driver_opts:
-      device: "./data/certbot/www/"
+      device: ./data/certbot/www/
       o: bind
       type: none
-
-  caddy_data:
-  caddy_config:
+  vol-site-data:
+    driver_opts:
+      device: ./data/db/
+      o: bind
+      type: none
