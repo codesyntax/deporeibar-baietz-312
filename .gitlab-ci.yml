@@ -126,10 +126,10 @@ bump-version:
     # Get git repo URL using ssh syntax
     - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
     - npm i -D @release-it/conventional-changelog @release-it/bumper
+  script:
     - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
-  script:
     - npx release-it -y --ci
     # - git push origin $CI_COMMIT_REF_NAME -u -o ci.skip
 
