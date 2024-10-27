@@ -11,6 +11,7 @@ stages:
   - test
   - build
   - bump
+  - docker-bump
   - release
 #  - deploy
 
@@ -133,8 +134,7 @@ bump-version:
     # - git push origin $CI_COMMIT_REF_NAME -u -o ci.skip
 
 bump-docker-compose-version:
-  stage: bump
-  needs: [bump-version]
+  stage: docker-bump
   before_script:
     # install basic packages
     - apk add --no-cache make bash python3 ncurses openssh-client-common git

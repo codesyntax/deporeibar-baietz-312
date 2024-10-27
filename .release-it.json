@@ -6,7 +6,7 @@
     "commitMessage": "Release ${version}",
     "tagName": "${version}",
     "tagAnnotation": "Release ${version}",
-    "pushArgs": "--follow-tags -o ci.skip",
+    "pushArgs": "--follow-tags -o ci.skip"
   },
   "gitlab": {
     "release": true
