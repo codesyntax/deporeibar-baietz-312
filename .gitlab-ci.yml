@@ -125,12 +125,13 @@ bump-version:
     - git config --global user.email "${CI_GITLAB_USER_EMAIL}"
     # Get git repo URL using ssh syntax
     - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
-    - npm i -D @release-it/conventional-changelog @release-it/bumper
     - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
-    - git push origin $CI_COMMIT_REF_NAME --set-upstream
+    - git push origin -u $CI_COMMIT_REF_NAME
   script:
+    # Install npm required packages
+    - npm i -D @release-it/conventional-changelog @release-it/bumper
     - npx release-it -y --ci
     # - git push origin $CI_COMMIT_REF_NAME -u -o ci.skip
 
@@ -154,12 +155,10 @@ bump-docker-compose-version:
     - git config --global user.email "${CI_GITLAB_USER_EMAIL}"
     # Get git repo URL using ssh syntax
     - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
-    - npm i -D @release-it/conventional-changelog @release-it/bumper
-    - npm i -g npx
     - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
-    - git push origin $CI_COMMIT_REF_NAME --set-upstream
+    - git push origin -u $CI_COMMIT_REF_NAME
 
   script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
