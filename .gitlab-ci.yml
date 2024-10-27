@@ -8,9 +8,9 @@ default:
 
 stages:
   - test
-  - bump
   - build
-#  - release
+  - bump
+  - release
 #  - deploy
 
 variables:
@@ -70,7 +70,7 @@ test-frontend:
 
 
 test-build-backend:
-  stage: test
+  stage: build
   before_script:
     - apk add --no-cache make bash python3 ncurses openssh-client-common
   script:
@@ -82,7 +82,7 @@ test-build-backend:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 
 test-build-frontend:
-  stage: test
+  stage: build
   before_script:
     - apk add --no-cache make bash python3 ncurses openssh-client-common
 
@@ -132,13 +132,12 @@ bump-version:
 build-and-release-backend:
   rules:
     - if: $CI_COMMIT_REF_NAME == "main"
-  stage: build
+  stage: release
   before_script:
     - apk add --no-cache make bash python3 ncurses openssh-client-common
     - export VERSION_NUMBER=$(cat version.txt)
   script:
     - cd backend
-    - make build-image
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
     - docker pull $CONTAINER_BACKEND_RELEASE_IMAGE:latest
     - docker tag $CONTAINER_BACKEND_RELEASE_IMAGE:latest $CONTAINER_BACKEND_RELEASE_IMAGE:$VERSION_NUMBER
@@ -147,14 +146,13 @@ build-and-release-backend:
 build-and-release-frontend:
   rules:
     - if: $CI_COMMIT_REF_NAME == "main"
-  stage: build
+  stage: release
   before_script:
     - apk add --no-cache make bash python3 ncurses openssh-client-common
     - export VERSION_NUMBER=$(cat version.txt)
 
   script:
     - cd frontend
-    - make build-image
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
     - docker pull $CONTAINER_FRONTEND_RELEASE_IMAGE:latest
     - docker tag $CONTAINER_FRONTEND_RELEASE_IMAGE:latest $CONTAINER_FRONTEND_RELEASE_IMAGE:$VERSION_NUMBER
