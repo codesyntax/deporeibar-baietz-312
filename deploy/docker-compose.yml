@@ -11,7 +11,7 @@ services:
       start_period: 60s
       test: curl --fail http://localhost:8080/Plone/ok || exit 1
       timeout: 30s
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1.0.19
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1.0.20
     ports:
     - 8080:8080
   caddy:
@@ -45,7 +45,7 @@ services:
       start_period: 60s
       test: curl --fail http://localhost:3000/Plone/ok || exit 1
       timeout: 30s
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1.0.19
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1.0.20
   nginx:
     depends_on:
     - backend
