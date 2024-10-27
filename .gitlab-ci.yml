@@ -28,8 +28,9 @@ check-backend:
   script:
     - cd backend
     - make check
-  only:
-    - develop
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
 
 # check-frontend:
 #   image: node:20-alpine
@@ -42,8 +43,9 @@ check-backend:
 #     - make install
 #     - make lint
 #     - make ci-i18n
-#   only:
-#     - develop
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
 
 
 test-backend:
