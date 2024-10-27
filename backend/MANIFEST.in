@@ -18,3 +18,5 @@ recursive-exclude frontend *
 exclude instance.yaml
 global-exclude *.pyc
 global-exclude .DS_Store
+include .mrbob.ini
+include bobtemplate.cfg
