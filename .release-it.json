@@ -1,0 +1,49 @@
+{
+  "npm": {
+    "publish": false
+  },
+  "git": {
+    "commitMessage": "Release ${version}",
+    "tagName": "${version}",
+    "tagAnnotation": "Release ${version}",
+    "pushArgs": "--follow-tags -o ci.skip",
+  },
+  "gitlab": {
+    "release": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "refactor",
+            "section": "Changes"
+          },
+          {
+            "type": "chore",
+            "section": "Maintenance"
+          }
+        ]
+      }
+    },
+    "@release-it/bumper": {
+      "in": "version.txt",
+      "out": [
+        "version.txt",
+        "frontend/package.json",
+        "frontend/packages/volto-deporeibar/package.json",
+        "backend/setup.py"
+      ]
+    }
+  }
+}
