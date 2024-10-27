@@ -124,7 +124,7 @@ bump-version:
     - git config --global user.name "${CI_GITLAB_USERNAME}"
     - git config --global user.email "${CI_GITLAB_USER_EMAIL}"
     # Get git repo URL using ssh syntax
-    - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:|" )
+    - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
     - echo $CI_PUSH_REPO
     - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
     - git checkout -B $CI_COMMIT_REF_NAME
