@@ -175,6 +175,25 @@ build-and-release-backend:
   before_script:
     - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common
     - export VERSION_NUMBER=$(cat version.txt)
+    # install basic packages
+    - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
+    # Git dance
+    - eval `ssh-agent -s`
+    - echo "${VOLTO_DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
+    # create ssh configuration to disable host checking when pushing
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - touch ~/.ssh/config
+    - 'echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    # Configure git
+    - git config --global user.name "${CI_GITLAB_USERNAME}"
+    - git config --global user.email "${CI_GITLAB_USER_EMAIL}"
+    # Get git repo URL using ssh syntax
+    - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
+    - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
+    - git checkout -B $CI_COMMIT_REF_NAME
+    - git pull origin $CI_COMMIT_REF_NAME
+    - git push origin -u $CI_COMMIT_REF_NAME
   script:
     - cd backend
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
@@ -187,6 +206,25 @@ build-and-release-frontend:
     - if: $CI_COMMIT_REF_NAME == "main"
   stage: release
   before_script:
+    # install basic packages
+    - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
+    # Git dance
+    - eval `ssh-agent -s`
+    - echo "${VOLTO_DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
+    # create ssh configuration to disable host checking when pushing
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - touch ~/.ssh/config
+    - 'echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    # Configure git
+    - git config --global user.name "${CI_GITLAB_USERNAME}"
+    - git config --global user.email "${CI_GITLAB_USER_EMAIL}"
+    # Get git repo URL using ssh syntax
+    - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
+    - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
+    - git checkout -B $CI_COMMIT_REF_NAME
+    - git pull origin $CI_COMMIT_REF_NAME
+    - git push origin -u $CI_COMMIT_REF_NAME
     - apk add --no-cache make bash python3 ncurses openssh-client-common
     - export VERSION_NUMBER=$(cat version.txt)
 
