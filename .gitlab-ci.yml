@@ -130,6 +130,7 @@ bump-version:
     - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
+    - git push origin $CI_COMMIT_REF_NAME --set-upstream
     - npx release-it -y --ci
     # - git push origin $CI_COMMIT_REF_NAME -u -o ci.skip
 
