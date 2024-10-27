@@ -175,7 +175,6 @@ build-and-release-backend:
   stage: release
   before_script:
     - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common
-    - export VERSION_NUMBER=$(cat version.txt)
     # install basic packages
     - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
     # Git dance
@@ -195,6 +194,7 @@ build-and-release-backend:
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
     - git push origin -u $CI_COMMIT_REF_NAME
+    - export VERSION_NUMBER=$(cat version.txt)
   script:
     - cd backend
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
@@ -226,9 +226,7 @@ build-and-release-frontend:
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
     - git push origin -u $CI_COMMIT_REF_NAME
-    - apk add --no-cache make bash python3 ncurses openssh-client-common
     - export VERSION_NUMBER=$(cat version.txt)
-
   script:
     - cd frontend
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
