@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG PLONE_VERSION=6.0.13
-FROM plone/server-builder:${PLONE_VERSION} as builder
+FROM plone/server-builder:${PLONE_VERSION} AS builder
 
 WORKDIR /app
 
@@ -13,7 +13,6 @@ COPY . src
 RUN <<EOT
     set -e
     bin/pip install mxdev uv
-    mv src/requirements-docker.txt src/requirements.txt
     sed -i 's/-e .\[test\]/./g' src/mx.ini
     cd /app/src
     # remove potentially existing virtualenv from local build
