@@ -28,6 +28,8 @@ check-backend:
   script:
     - cd backend
     - make check
+  only:
+    - develop
 
 # check-frontend:
 #   image: node:20-alpine
@@ -40,6 +42,9 @@ check-backend:
 #     - make install
 #     - make lint
 #     - make ci-i18n
+#   only:
+#     - develop
+
 
 test-backend:
   stage: test
