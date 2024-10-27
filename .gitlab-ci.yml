@@ -100,6 +100,7 @@ test-build-frontend:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 
 bump-version:
+  image: node:20-alpine
   rules:
     - if: $CI_COMMIT_REF_NAME == "main"
   stage: bump
@@ -121,17 +122,14 @@ bump-version:
     - git config --global user.email "${CI_GITLAB_USER_EMAIL}"
     # Get git repo URL using ssh syntax
     - export CI_PUSH_REPO=$(echo "$CI_REPOSITORY_URL" | sed -e "s|.*@\(.*\)|git@\1|" -e "s|/|:/|" )
-
-  script:
-    - /usr/bin/python -c "print(int(open('version.txt').read()) + 1)" > new_version.txt
-    - mv new_version.txt version.txt
-    # Commit new version to repo and push
-    - git add version.txt
-    - git commit -m "version bump [ci skip]"
+    - npm i -D @release-it/conventional-changelog @release-it/bumper
+    - npm i -g npx
     - git remote set-url --push origin "ssh://${CI_PUSH_REPO}"
     - git checkout -B $CI_COMMIT_REF_NAME
     - git pull origin $CI_COMMIT_REF_NAME
-    - git push origin $CI_COMMIT_REF_NAME -u -o ci.skip
+  script:
+    - npx release-it -y --ci
+    # - git push origin $CI_COMMIT_REF_NAME -u -o ci.skip
 
 
 build-and-release-backend:
