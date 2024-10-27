@@ -13,7 +13,7 @@ COPY . src
 RUN <<EOT
     set -e
     bin/pip install mxdev uv
-    mv src/requirements-docker.txt src/requirements.txt
+    # mv src/requirements-docker.txt src/requirements.txt
     sed -i 's/-e .\[test\]/./g' src/mx.ini
     cd /app/src
     # remove potentially existing virtualenv from local build

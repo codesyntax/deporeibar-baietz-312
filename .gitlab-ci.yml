@@ -118,6 +118,17 @@ build-and-release-frontend:
     - docker push $CONTAINER_FRONTEND_RELEASE_IMAGE:latest
     - docker push $CONTAINER_FRONTEND_RELEASE_IMAGE:$CI_COMMIT_TAG
 
+
+update-version-number:
+  rules:
+    - if: $CI_COMMIT_TAG
+  stage: deploy
+  script:
+    - echo $CI_COMMIT_TAG > version.txt
+    - docker pull registry.gitlab.com/codesyntax/deploy-helpers:latest
+    - docker run -v $(pwd):/app registry.gitlab.com/codesyntax/deploy-helpers:latest ./plone_docker_project_version_bump.py
+
+
 # deploy:
 #   stage: deploy
 #   rules:
