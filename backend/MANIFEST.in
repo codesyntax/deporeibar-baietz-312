@@ -32,3 +32,5 @@ recursive-include src *.sh
 recursive-include src *.xml
 recursive-include src *.zcml
 recursive-include tests *.py
+exclude requirements-mxdev.txt
+exclude constraints-mxdev.txt

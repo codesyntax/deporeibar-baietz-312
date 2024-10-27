@@ -1,9 +1,8 @@
-from deporeibar.addon.testing import (
-    DEPOREIBAR_ADDON_ACCEPTANCE_TESTING,
-    DEPOREIBAR_ADDON_FUNCTIONAL_TESTING,
-    DEPOREIBAR_ADDON_INTEGRATION_TESTING,
-)
+from deporeibar.addon.testing import DEPOREIBAR_ADDON_ACCEPTANCE_TESTING
+from deporeibar.addon.testing import DEPOREIBAR_ADDON_FUNCTIONAL_TESTING
+from deporeibar.addon.testing import DEPOREIBAR_ADDON_INTEGRATION_TESTING
 from pytest_plone import fixtures_factory
+
 
 pytest_plugins = ["pytest_plone"]
 
