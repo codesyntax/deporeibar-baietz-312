@@ -163,7 +163,7 @@ bump-docker-compose-version:
   script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
     - docker pull registry.gitlab.com/codesyntax/deploy-helpers:latest
-    - docker run -v $(pwd):/app registry.gitlab.com/codesyntax/deploy-helpers:latest ./plone_projects_docker_images_bump.py
+    - docker run -v $(pwd):/app registry.gitlab.com/codesyntax/deploy-helpers:latest ./plone_project_docker_images_bump.py
     - git add deploy
     - git commit -m "bump version [ci skip]"
     - git push origin $CI_COMMIT_REF_NAME
