@@ -138,7 +138,7 @@ bump-docker-compose-version:
   stage: docker-bump
   before_script:
     # install basic packages
-    - apk add --no-cache make bash python3 ncurses openssh-client-common git
+    - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
     # Login in container registry
     - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
     # Git dance
@@ -174,7 +174,7 @@ build-and-release-backend:
     - if: $CI_COMMIT_REF_NAME == "main"
   stage: release
   before_script:
-    - apk add --no-cache make bash python3 ncurses openssh-client-common
+    - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common
     - export VERSION_NUMBER=$(cat version.txt)
   script:
     - cd backend
