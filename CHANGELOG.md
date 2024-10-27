@@ -1,3 +1,25 @@
+
+
+## 1.0.15 (2024-10-27)
+
+### Bug Fixes
+
+* adjust git dance ([eae41fc](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/eae41fc6b49fabc4ae8e3c1d043576e352900a2e))
+* change order of items ([28b59e9](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/28b59e93c1f2065c8cfbf597deef34cdd5181af4))
+* change url generation ([7c07a23](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/7c07a2324f2f8c3a88dcfe729ac695deaebc8803))
+* fixes in CI ([42c34cf](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/42c34cfcba3006345ea61d5b385878a152bc4434))
+* install openssh-client to be able to push ([ee69b02](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/ee69b0205e345ab665ddfd195379d7a959c5ad17))
+* install openssh-client to be able to push ([2b8ab80](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/2b8ab80bdd19ba8c8df54e4918f5559fe5577b0e))
+* set upstream ([2cb1d7a](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/2cb1d7a7f877a069da2f96b42c478dff323d8280))
+* set upstream ([f3dfa79](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/f3dfa79d07211b72613f3211cbf44c5ea1757afe))
+* version number fix ([782cd44](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/782cd441cd91aa7667802ad4a57c03125387dea7))
+* version number fix ([f9ce01e](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/f9ce01eeca2c449f41f003e1277e5b273cdd41f4))
+
+### Maintenance
+
+* echo git repo url ([2be18bb](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/2be18bb68b5744066c7921e6a74cb9bb258c893e))
+* rollback ([e03711c](https://gitlab.com/codesyntax/deporeibar-baietz-312/commit/e03711c389859ec60893849bab67aced4f80da8f))
+
 ## 1.0.14 (2024-10-27)
 
 No significant changes.

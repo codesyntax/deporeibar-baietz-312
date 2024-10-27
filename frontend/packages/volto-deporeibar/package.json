@@ -1,6 +1,6 @@
 {
   "name": "volto-deporeibar",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Eibarko Klub Deportiboaren Baietz 312 proiektuaren webgunea",
   "main": "src/index.js",
   "license": "MIT",
