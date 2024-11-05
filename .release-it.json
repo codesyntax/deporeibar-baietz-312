@@ -9,7 +9,7 @@
     "pushArgs": "--follow-tags -o ci.skip"
   },
   "gitlab": {
-    "release": true
+    "release": false
   },
   "plugins": {
     "@release-it/conventional-changelog": {
