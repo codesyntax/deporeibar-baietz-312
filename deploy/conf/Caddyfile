@@ -1,4 +1,4 @@
-test.312.deporeibar.com:443 {
+312.deporeibar.com:443 {
     # Enable automatic HTTPS
     # If you want HTTP only, remove ":80" and use ":443" instead
 
