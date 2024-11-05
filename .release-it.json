@@ -42,7 +42,12 @@
         "version.txt",
         "frontend/package.json",
         "frontend/packages/volto-deporeibar/package.json",
-        "backend/setup.py"
+        "backend/setup.py",
+        {
+          "file": "deploy/.env",
+          "type": "text/x-properties",
+          "path": "VERSION"
+        }
       ]
     }
   }

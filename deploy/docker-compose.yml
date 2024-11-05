@@ -1,75 +1,55 @@
 services:
   backend:
     depends_on:
-    - db
+      - zeo
     environment:
-      RELSTORAGE_DSN: dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
-        password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
-    healthcheck:
-      interval: 40s
-      retries: 3
-      start_period: 60s
-      test: curl --fail http://localhost:8080/Plone/ok || exit 1
-      timeout: 30s
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:1.0.20
+      # RELSTORAGE_DSN:
+      #   dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}'
+      #   password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
+      ZEO_ADDRESS: zeo:8100
+      ZEO_SHARED_BLOB_DIR: true
+    volumes:
+      - ./data/zeo:/data
+
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/backend:$VERSION
     ports:
-    - 8080:8080
+      - 8080:8080
   caddy:
     image: caddy
     ports:
-    - 80:80
-    - 443:443
-    - 443:443/udp
+      - 80:80
+      - 443:443
+      - 443:443/udp
     volumes:
-    - ./conf/Caddyfile:/etc/caddy/Caddyfile
-    - caddy_data:/data
-    - caddy_config:/config
-  db:
-    deploy: {}
-    environment:
-      POSTGRES_DB: plone
-      POSTGRES_PASSWORD: CTBolRnPQVoh
-      POSTGRES_USER: plone
-    image: postgres:14
-    volumes:
-    - ./data/db:/var/lib/postgresql/data
+      - ./conf/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
   frontend:
     depends_on:
-    - backend
+      - backend
     environment:
       RAZZLE_API_PATH: https://test.312.deporeibar.com
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-    healthcheck:
-      interval: 40s
-      retries: 3
-      start_period: 60s
-      test: curl --fail http://localhost:3000/Plone/ok || exit 1
-      timeout: 30s
-    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:1.0.20
+
+    image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:$VERSION
+  zeo:
+    image: plone/plone-zeo:6.0.0
+    volumes:
+      - ./data/zeo:/data
   nginx:
     depends_on:
-    - backend
-    - frontend
+      - backend
+      - frontend
     environment:
       SERVER_DOMAIN: test.312.deporeibar.com
     image: nginx
     volumes:
-    - ./conf/default.conf.template:/etc/nginx/templates/default.conf.template
-    - ./conf/dhparam.pem:/etc/nginx/ssl/dhparam.pem
-version: '3.8'
+      - ./conf/default.conf.template:/etc/nginx/templates/default.conf.template
+      - ./conf/dhparam.pem:/etc/nginx/ssl/dhparam.pem
+
 volumes:
   caddy_config: null
   caddy_data: null
-  vol-certbot-certs:
-    driver_opts:
-      device: ./data/certbot/conf/
-      o: bind
-      type: none
-  vol-certbot-www:
-    driver_opts:
-      device: ./data/certbot/www/
-      o: bind
-      type: none
   vol-site-data:
     driver_opts:
       device: ./data/db/
