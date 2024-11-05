@@ -28,7 +28,7 @@ services:
     depends_on:
       - backend
     environment:
-      RAZZLE_API_PATH: https://test.312.deporeibar.com
+      RAZZLE_API_PATH: https://312.deporeibar.com
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
 
     image: registry.gitlab.com/codesyntax/deporeibar-baietz-312/frontend:$VERSION
@@ -41,7 +41,7 @@ services:
       - backend
       - frontend
     environment:
-      SERVER_DOMAIN: test.312.deporeibar.com
+      SERVER_DOMAIN: 312.deporeibar.com
     image: nginx
     volumes:
       - ./conf/default.conf.template:/etc/nginx/templates/default.conf.template
