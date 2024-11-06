@@ -79,6 +79,7 @@ msgid "Zain"
 msgstr "Zain"
 
 #. Default: "Altuera"
+#: components/Blocks/Listing/MountainTable
 #: components/MendiaView/MendiaView
 msgid "altuera"
 msgstr "Altuera"
@@ -121,6 +122,7 @@ msgid "egindaBaliogabe"
 msgstr "Eginda (baliogabea)"
 
 #. Default: "Egoera"
+#: components/Blocks/Listing/MountainTable
 #: components/MendiaView/MendiaView
 #: components/NireIgoerak/IgoerarenXehetasunak
 msgid "egoera"
@@ -202,6 +204,7 @@ msgid "ezzarajoanAzalpena"
 msgstr "Azkenean mendi honetara ez bazara joan, esaiguzu mesedez."
 
 #. Default: "Igoera eguna"
+#: components/Blocks/Listing/MountainTable
 #: components/IgoeraView/IgoeraView
 msgid "igoeraEguna"
 msgstr "Igoera eguna"
@@ -247,6 +250,7 @@ msgid "kaixo"
 msgstr "Kaixo {fullname}"
 
 #. Default: "Mendia"
+#: components/Blocks/Listing/MountainTable
 #: components/NireIgoerak/IgoerarenXehetasunak
 msgid "mendia"
 msgstr "Mendia"
@@ -257,6 +261,7 @@ msgid "mendiaErreserbatu"
 msgstr "Mendia erreserbatu"
 
 #. Default: "Mendizalea"
+#: components/Blocks/Listing/MountainTable
 #: components/IgoeraGridListingItemTemplate/IgoeraGridListingItemTemplate
 #: components/MendiaView/MendiaView
 #: components/NireIgoerak/NireIgoerak
@@ -274,6 +279,7 @@ msgid "mendizaleakIgoZirenak"
 msgstr "Igo ziren mendizaleak"
 
 #. Default: "Mendizerra"
+#: components/Blocks/Listing/MountainTable
 #: components/MendiaView/MendiaView
 msgid "mendizerra"
 msgstr "Mendizerra"
