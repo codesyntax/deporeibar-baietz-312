@@ -60,6 +60,8 @@ setup(
         "collective.taxonomy",
         "requests",
         "collective.contentrules.telegram",
+        "collective.volto.formsupport",
+        "collective.z3cform.norobots",
     ],
     extras_require={
         "test": [
