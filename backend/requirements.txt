@@ -4,3 +4,5 @@ pas.plugins.oidc
 plone.restapi
 collective.exportimport
 plone.exportimport
+urllib3
+requests
