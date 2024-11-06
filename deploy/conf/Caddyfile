@@ -12,14 +12,16 @@
         #health_timeout 5s
 
        # Optional: additional header modifications
-        header_up X-Forwarded-Proto {http.request.scheme}
         header_up Host {http.request.host}
+        header_up X-Forwarded-Proto {http.request.scheme}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
     }
 
     # Logging (optional)
     log {
         output stdout
-        format json
+        format console
     }
 
     # Caching settings (optional, if needed)
