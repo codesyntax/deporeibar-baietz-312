@@ -5,6 +5,7 @@ import { MendiKontaketakBlockEdit } from './components/Blocks/MendiKontaketa/Edi
 import { IgoeraView } from './components/IgoeraView';
 import { MendiakMapListingBlockTemplate } from './components/MendiakListingBlockTemplate';
 import { MendiaView } from './components/MendiaView/MendiaView';
+import { MountainTable } from './components/Blocks/Listing/MountainTable';
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import RightColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/RightColumnFacets';
 import LeftColumnFacets from '@plone/volto/components/manage/Blocks/Search/layout/LeftColumnFacets';
@@ -56,6 +57,12 @@ const applyConfig = (config) => {
         schema.fieldsets[0].fields.push('wrapperLink');
         return schema;
       },
+    },
+    {
+      id: 'climbingtable',
+      isDefault: false,
+      title: 'Climbing table',
+      template: MountainTable,
     },
   ];
 

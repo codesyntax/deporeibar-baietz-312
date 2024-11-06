@@ -135,3 +135,19 @@ class Mendia(Container):
         from deporeibar.addon.indexers.egoera_indexer import egoera_indexer
 
         return egoera_indexer(self)()
+
+    def mendizaleak(self):
+        results = []
+        for item in self.values():
+            if item.portal_type == "Igoera":
+                if item.mendizaleak:
+                    results.extend(item.mendizaleak.split("\n"))
+
+        return ", ".join(results)
+
+    def igoera_data(self):
+        for item in self.values():
+            if item.portal_type == "Igoera":
+                return item.egindako_eguna or item.eguna
+
+        return ""

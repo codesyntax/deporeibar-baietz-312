@@ -244,3 +244,26 @@ p {
   }
   */
 }
+
+.climbings-table.table {
+  border: 1px solid #c1c1c1;
+
+  @include add(size, s);
+  @include add(weight, medium);
+
+  th {
+    background-color: #555555 !important;
+    color: white;
+  }
+
+  td,
+  th {
+    padding: 10px;
+    border-top: 1px solid #c1c1c1;
+    border-left: 1px solid #c1c1c1;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

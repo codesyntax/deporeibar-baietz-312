@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-10-12T08:03:27.611Z\n"
+"POT-Creation-Date: 2024-11-06T18:53:58.777Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -74,6 +74,7 @@ msgid "Zain"
 msgstr ""
 
 #. Default: "Altuera"
+#: components/Blocks/Listing/MountainTable
 #: components/MendiaView/MendiaView
 msgid "altuera"
 msgstr ""
@@ -116,6 +117,7 @@ msgid "egindaBaliogabe"
 msgstr ""
 
 #. Default: "Egoera"
+#: components/Blocks/Listing/MountainTable
 #: components/MendiaView/MendiaView
 #: components/NireIgoerak/IgoerarenXehetasunak
 msgid "egoera"
@@ -197,6 +199,7 @@ msgid "ezzarajoanAzalpena"
 msgstr ""
 
 #. Default: "Igoera eguna"
+#: components/Blocks/Listing/MountainTable
 #: components/IgoeraView/IgoeraView
 msgid "igoeraEguna"
 msgstr ""
@@ -242,6 +245,7 @@ msgid "kaixo"
 msgstr ""
 
 #. Default: "Mendia"
+#: components/Blocks/Listing/MountainTable
 #: components/NireIgoerak/IgoerarenXehetasunak
 msgid "mendia"
 msgstr ""
@@ -252,6 +256,7 @@ msgid "mendiaErreserbatu"
 msgstr ""
 
 #. Default: "Mendizalea"
+#: components/Blocks/Listing/MountainTable
 #: components/IgoeraGridListingItemTemplate/IgoeraGridListingItemTemplate
 #: components/MendiaView/MendiaView
 #: components/NireIgoerak/NireIgoerak
@@ -269,6 +274,7 @@ msgid "mendizaleakIgoZirenak"
 msgstr ""
 
 #. Default: "Mendizerra"
+#: components/Blocks/Listing/MountainTable
 #: components/MendiaView/MendiaView
 msgid "mendizerra"
 msgstr ""

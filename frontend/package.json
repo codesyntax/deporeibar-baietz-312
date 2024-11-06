@@ -33,11 +33,11 @@
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
-    "@plone/volto": "workspace:*",
-    "@plone/registry": "workspace:*",
-    "volto-deporeibar": "workspace:*",
+    "@mbarde/volto-fullcalendar-block": "workspace:*",
     "@plone-collective/volto-authomatic": "workspace:*",
-    "@mbarde/volto-fullcalendar-block": "workspace:*"
+    "@plone/registry": "workspace:*",
+    "@plone/volto": "workspace:*",
+    "volto-deporeibar": "workspace:*"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"
