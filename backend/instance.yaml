@@ -1,3 +1,10 @@
 default_context:
     initial_user_password: 'admin'
     zcml_package_includes: 'deporeibar.addon'
+
+    environment:
+        ZOPE_FORM_MEMORY_LIMIT: 100MB
+
+    dos_protection_form_memory_limit: 100MB
+    dos_protection_form_disk_limit: 100MB
+    dos_protection_form_memfile_limit: 100MB
