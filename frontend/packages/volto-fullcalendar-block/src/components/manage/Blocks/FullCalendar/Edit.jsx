@@ -20,6 +20,7 @@ const FullCalendarBlockEdit = (props) => {
       ...defaultValues,
       ...props.data,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

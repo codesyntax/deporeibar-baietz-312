@@ -98,12 +98,12 @@ export const egoeraColors = {
 export const RenderMendizaleakP = ({ mendizaleak }) => {
   return mendizaleak ? (
     <p>
-      {mendizaleak.split('\n').map((mendizalea) => {
+      {mendizaleak.split('\n').map((mendizalea, key) => {
         return (
-          <>
+          <span key={key}>
             <span>{mendizalea}</span>
             <br />
-          </>
+          </span>
         );
       })}
     </p>
@@ -115,8 +115,8 @@ export const RenderMendizaleakP = ({ mendizaleak }) => {
 export const RenderMendizaleakList = ({ mendizaleak }) => {
   return mendizaleak ? (
     <ul>
-      {mendizaleak.split('\n').map((mendizalea) => {
-        return <li>{mendizalea}</li>;
+      {mendizaleak.split('\n').map((mendizalea, key) => {
+        return <li key={key}>{mendizalea}</li>;
       })}
     </ul>
   ) : (

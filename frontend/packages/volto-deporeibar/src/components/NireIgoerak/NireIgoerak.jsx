@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { searchContent } from '@plone/volto/actions';
 import { UniversalLink } from '@plone/volto/components';
 import jwtDecode from 'jwt-decode';
@@ -25,6 +26,7 @@ export const NireIgoerak = (props) => {
           Creator: userName,
           fullobjects: true,
           sort_on: 'created',
+          sort_limit: 999,
         },
         userName, // subrequest
       ),

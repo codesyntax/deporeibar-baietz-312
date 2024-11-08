@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { Component, UniversalLink } from '@plone/volto/components';
 import { getContent } from '@plone/volto/actions';
+import { Component, UniversalLink } from '@plone/volto/components';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import { Eguna } from '../Eguna';
 //import ImageGalleryTemplate from '@plone/volto/components/manage/Blocks/Listing/ImageGallery';
-import { FormattedMessage } from 'react-intl';
-import config from '@plone/volto/registry';
-import { flattenToAppURL } from '@plone/volto/helpers';
 import loadable from '@loadable/component';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 import 'react-image-gallery/styles/css/image-gallery.css';
+import { FormattedMessage } from 'react-intl';
 
 import { MendiaDetails } from '../MendiaView/MendiaView';
 
@@ -55,6 +55,7 @@ export const IgoeraGridListingItemTemplate = (props) => {
 
   useEffect(() => {
     dispatch(getContent(item['@id'], '', item.UID));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fullItem = search?.loaded ? search.data : {};

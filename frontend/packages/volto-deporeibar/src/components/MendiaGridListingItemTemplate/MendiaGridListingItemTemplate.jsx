@@ -1,6 +1,5 @@
 import { UniversalLink, Component } from '@plone/volto/components';
 import { egoerak } from '../utils';
-import { FormattedMessage } from 'react-intl';
 
 import { MendiaDetails } from '../MendiaView/MendiaView';
 

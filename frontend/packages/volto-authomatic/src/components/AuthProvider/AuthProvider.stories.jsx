@@ -76,7 +76,7 @@ MicrosoftRegister.args = {
   action: 'register',
 };
 
-export default {
+const provider = {
   title: 'Public/Components/AuthProvider',
   component: AuthProvider,
   argTypes: {
@@ -94,3 +94,5 @@ export default {
     },
   },
 };
+
+export default provider;
