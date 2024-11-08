@@ -8,6 +8,9 @@ services:
       #   password='${DB_PASSWORD:-CTBolRnPQVoh}' port='${DB_PORT:-5432}'
       ZEO_ADDRESS: zeo:8100
       ZEO_SHARED_BLOB_DIR: true
+      ZOPE_FORM_MEMORY_LIMIT: 100MB
+      ZOPE_FORM_DISK_LIMIT: 100MB
+      ZOPE_FORM_MEMFILE_LIMIT: 100MB
     volumes:
       - ./data/zeo:/data
 
