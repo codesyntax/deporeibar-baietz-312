@@ -1,17 +1,7 @@
 312.deporeibar.com:443 {
-    # Enable automatic HTTPS
-    # If you want HTTP only, remove ":80" and use ":443" instead
-
-    # Set the domain name if needed (e.g., "example.com")
 
     # Set the backend server URL
     reverse_proxy * http://nginx:80 {
-        # Optional: set the health check endpoint to ensure backend is available
-        #health_uri /ok
-        #health_interval 10s
-        #health_timeout 5s
-
-       # Optional: additional header modifications
         header_up Host {http.request.host}
         header_up X-Forwarded-Proto {http.request.scheme}
         header_up X-Real-IP {remote}
@@ -24,8 +14,11 @@
         format console
     }
 
-    # Caching settings (optional, if needed)
-    # Uncomment if caching is required:
-    # encode zstd gzip
-    tls certs@codesyntax.com
+    tls certs@codesyntax.com {
+        protocols tls1.3
+    }
+
+    # HSTS (63072000 seconds)
+    header Strict-Transport-Security "max-age=63072000"
+
 }
