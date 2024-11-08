@@ -24,6 +24,8 @@ server {
     # Block pages from loading when they detect reflected XSS attacks
     add_header X-XSS-Protection "1; mode=block";
 
+    client_max_body_size 20M;
+
     location /.well-known/acme-challenge/ {
         allow all;
         root /var/www/certbot;
