@@ -26,6 +26,7 @@ export const NireIgoerak = (props) => {
           Creator: userName,
           fullobjects: true,
           sort_on: 'created',
+          sort_limit: 999,
         },
         userName, // subrequest
       ),
