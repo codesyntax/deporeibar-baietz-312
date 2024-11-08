@@ -1,26 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  ModalHeader,
-  ModalDescription,
-  ModalContent,
-  ModalActions,
   Button,
   Modal,
+  ModalActions,
+  ModalContent,
+  ModalDescription,
+  ModalHeader,
 } from 'semantic-ui-react';
-import { useDispatch, useSelector } from 'react-redux';
 
-import Form from '@plone/volto/components/manage/Form/Form';
 import { getContent } from '@plone/volto/actions';
-import { addIgoera } from '../../actions/addigoera';
-import { toast } from 'react-toastify';
 import { Toast } from '@plone/volto/components';
+import Form from '@plone/volto/components/manage/Form/Form';
 import { expandToBackendURL } from '@plone/volto/helpers';
 import jwtDecode from 'jwt-decode';
+import { toast } from 'react-toastify';
+import { addIgoera } from '../../actions/addigoera';
 
 import Login from '@plone-collective/volto-authomatic/components/Login/Login';
 
-import { Message } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
+import { Message } from 'semantic-ui-react';
 
 const ErreserbaSchema = {
   title: 'Erreserba',
@@ -63,8 +63,6 @@ export const Erreserbatu = (props) => {
   const now = `${date.getFullYear()}-${month}-${date.getDate()}`;
 
   const igoeraRef = React.useRef(igoera);
-
-  const userSubRequestToken = `${user?.sub}-${item.UID}`;
 
   React.useEffect(() => {
     !igoeraRef?.current.add?.loaded &&
@@ -115,6 +113,7 @@ export const Erreserbatu = (props) => {
     igoeraRef.current = igoera;
 
     return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [igoera?.add?.error, igoera?.add?.loaded]);
 
   const handleSubmit = (event, item) => {

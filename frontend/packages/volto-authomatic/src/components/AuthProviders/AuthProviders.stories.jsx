@@ -43,7 +43,7 @@ MultipleProvidersRegister.args = {
   action: 'register',
 };
 
-export default {
+const provider = {
   title: 'Public/Components/AuthProviders',
   component: AuthProviders,
   argTypes: {
@@ -61,3 +61,5 @@ export default {
     },
   },
 };
+
+export default provider;

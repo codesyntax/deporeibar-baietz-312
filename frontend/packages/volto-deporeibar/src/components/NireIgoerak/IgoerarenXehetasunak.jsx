@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { getBaseUrl } from '@plone/volto/helpers';
 import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -157,21 +158,8 @@ export const IgoerarenXehetasunak = (props) => {
 
   useEffect(() => {
     !updateContentState?.loading && updateContentState?.loaded && onUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateContentState]);
-
-  const OraindikEzNaizJoan = (props) => {
-    const { item } = props;
-    dispatch(
-      modifyIgoera(
-        expandToBackendURL(item['@id']),
-        {
-          egoera: 'zain',
-        },
-        {},
-        oraindikEzToken,
-      ),
-    );
-  };
 
   const joanNaiz = (item) => {
     dispatch(

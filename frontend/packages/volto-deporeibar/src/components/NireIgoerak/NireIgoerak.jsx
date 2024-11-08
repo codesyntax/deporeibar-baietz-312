@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { searchContent } from '@plone/volto/actions';
 import { UniversalLink } from '@plone/volto/components';
 import jwtDecode from 'jwt-decode';

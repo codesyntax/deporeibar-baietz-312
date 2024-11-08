@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 
 import { Container } from 'semantic-ui-react';
 //import {Container} from '@plone/components';
-import { TableRow, TableHeaderCell, TableCell, Table } from 'semantic-ui-react';
-import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions';
-import { Mapa } from '../Mapa/Mapa';
-import { Erreserbatu } from '../Erreserbatu';
-import { expandToBackendURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
-import { Eguna } from '../Eguna';
+import { expandToBackendURL } from '@plone/volto/helpers';
 import jwtDecode from 'jwt-decode';
-import { IgoerarenXehetasunak } from '../NireIgoerak/IgoerarenXehetasunak';
 import { FormattedMessage } from 'react-intl';
+import { useDispatch, useSelector } from 'react-redux';
+import { Table, TableCell, TableHeaderCell, TableRow } from 'semantic-ui-react';
+import { Eguna } from '../Eguna';
+import { Erreserbatu } from '../Erreserbatu';
+import { Mapa } from '../Mapa/Mapa';
+import { IgoerarenXehetasunak } from '../NireIgoerak/IgoerarenXehetasunak';
 import { RenderMendizaleakComma, egoerak } from '../utils';
 
 export const MendiaDetails = (props) => {
@@ -87,6 +87,7 @@ export const MendiaView = (props) => {
 
   useEffect(() => {
     getIgoerak();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, content, fullobjects]);
 
   const token = useSelector((state) => state?.userSession?.token);

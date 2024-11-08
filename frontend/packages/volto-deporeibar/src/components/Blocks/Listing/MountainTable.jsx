@@ -45,8 +45,8 @@ export const MountainTable = ({ items }) => {
         </tr>
       </thead>
       <tbody>
-        {items.map((item) => {
-          return <MountainRow item={item} />;
+        {items.map((item, key) => {
+          return <MountainRow item={item} key={key} />;
         })}
       </tbody>
     </table>

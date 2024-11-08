@@ -41,8 +41,7 @@ MultipleProviders.args = {
   action: 'login',
   loading: false,
 };
-
-export default {
+const provider = {
   title: 'Public/Components/LoginForm',
   component: LoginForm,
   argTypes: {
@@ -67,3 +66,5 @@ export default {
     },
   },
 };
+
+export default provider;

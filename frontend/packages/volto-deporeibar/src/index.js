@@ -165,8 +165,8 @@ const applyConfig = (config) => {
     includeSiteTitle: true,
     titleAndSiteTitleSeparator: '-',
   };
+  config.settings.querystringSearchGet = true;
   config.experimental.addBlockButton.enabled = true;
-
   config.addonReducers = {
     ...config.addonReducers,
     ...reducers,

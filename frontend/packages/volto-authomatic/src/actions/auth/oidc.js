@@ -2,7 +2,6 @@
  * OIDC Login
  * @module actions/auth/oidc
  */
-import config from '@plone/volto/registry';
 import { LOGIN, LOGOUT_OIDC, OIDC_REDIRECT } from '../../constants/ActionTypes';
 
 /**

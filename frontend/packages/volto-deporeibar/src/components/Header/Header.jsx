@@ -17,14 +17,14 @@ import {
   UniversalLink,
 } from '@plone/volto/components';
 
+import { LoggedTools } from '../LoggedTools';
+
 const messages = defineMessages({
   siteLabel: {
     id: 'siteLabel',
     defaultMessage: ' ',
   },
 });
-
-import { LoggedTools } from '../LoggedTools';
 
 const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   return (
@@ -66,8 +66,10 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
           <div className="tools">
             {!token && <Anontools />}
             {siteAction &&
-              siteAction.map((item) => (
-                <UniversalLink href={item.url}>{item.title}</UniversalLink>
+              siteAction.map((item, key) => (
+                <UniversalLink key={key} href={item.url}>
+                  {item.title}
+                </UniversalLink>
               ))}
           </div>
           {siteLabel && (
