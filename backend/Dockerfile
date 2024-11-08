@@ -33,6 +33,8 @@ LABEL maintainer="CodeSyntax <certs@codesyntax.com>" \
 
 # Copy /app from builder
 COPY --from=builder /app /app
+COPY ./conf/zope.conf /app/etc/zope.conf
+COPY ./conf/docker-entrypoint.sh /app/docker-entrypoint.sh
 
 RUN <<EOT
     set -e
