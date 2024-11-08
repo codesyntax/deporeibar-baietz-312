@@ -15,8 +15,7 @@
     }
 
     tls certs@codesyntax.com {
-        # Due to a lack of DHE support, you -must- use an ECDSA cert to support IE 11 on Windows 7
-        ciphers TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+        protocols tls1.3
     }
 
     # HSTS (63072000 seconds)
