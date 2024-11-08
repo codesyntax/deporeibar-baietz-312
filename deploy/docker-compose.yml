@@ -48,7 +48,6 @@ services:
     image: nginx
     volumes:
       - ./conf/default.conf.template:/etc/nginx/templates/default.conf.template
-      - ./conf/dhparam.pem:/etc/nginx/ssl/dhparam.pem
 
 volumes:
   caddy_config: null
