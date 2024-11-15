@@ -33,7 +33,6 @@ check-backend:
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 
-
 check-frontend:
   image: node:20-alpine
   stage: check
@@ -47,8 +46,6 @@ check-frontend:
     - make ci-i18n
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-
-
 
 test-backend:
   stage: test
@@ -76,7 +73,6 @@ test-frontend:
     - make test-ci
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-
 
 test-build-backend:
   stage: build
@@ -113,7 +109,7 @@ bump-version:
     - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
     # Git dance
     - eval `ssh-agent -s`
-    - echo "${VOLTO_DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
+    - echo "${DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
     # create ssh configuration to disable host checking when pushing
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
@@ -144,7 +140,7 @@ build-and-release:
     - apk add --no-cache make bash python3 ncurses openssh-client openssh-client-common git
     # Git dance
     - eval `ssh-agent -s`
-    - echo "${VOLTO_DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
+    - echo "${DEPLOY_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh key
     # create ssh configuration to disable host checking when pushing
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
@@ -170,7 +166,6 @@ build-and-release:
     - docker pull $CONTAINER_FRONTEND_RELEASE_IMAGE:latest
     - docker tag $CONTAINER_FRONTEND_RELEASE_IMAGE:latest $CONTAINER_FRONTEND_RELEASE_IMAGE:$VERSION_NUMBER
     - docker push $CONTAINER_FRONTEND_RELEASE_IMAGE:$VERSION_NUMBER
-
 # deploy:
 #   stage: deploy
 #   rules:
